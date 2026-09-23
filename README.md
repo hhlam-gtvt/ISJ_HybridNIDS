@@ -18,7 +18,7 @@ Hybrid-NIDS: NFStream + Random Forest / Suricata
       Logstash / Elasticsearch
                   |
                   v
-Orchestrator -> Policy / Rule Engine -> RAG / LLM (khi áp dụng)
+Orchestrator -> Policy / Rule Engine -> RAG / LLM 
                   |
                   v
 Phê duyệt / kiểm soát phản ứng -> Hành động hoặc không hành động
@@ -32,18 +32,18 @@ Phê duyệt / kiểm soát phản ứng -> Hành động hoặc không hành đ
 ```text
 hybrid-nids-soar-elk-llm/
 ├── README.md
-├── LICENSE                       # Chờ xác nhận giấy phép
-├── CITATION.cff                  # Dự kiến: metadata trích dẫn đã xác minh
+├── LICENSE                       # Giấy phép
+├── CITATION.cff                  #  metadata trích dẫn 
 ├── .gitignore
-├── .env.example                  # Chỉ chứa giá trị mẫu, không chứa bí mật
-├── requirements.txt              # Môi trường phát hành đã kiểm chứng
+├── .env.example                  # Chỉ chứa giá trị mẫu
+├── requirements.txt              # Môi trường 
 │
 ├── detector/
-│   └── hybrid-nids/              # Mã nguồn và tài liệu phân hệ Cường
+│   └── hybrid-nids/              # Mã nguồn
 ├── response/
 │   └── soar-elk-llm/             # Mã nguồn và kiểm thử phân hệ Lam
-├── integration/                  # Dự kiến: schema cảnh báo và lớp kết nối
-├── configs/                      # Cấu hình ELK/triển khai đã loại bỏ bí mật
+├── integration/                  # Schema cảnh báo và lớp kết nối
+├── configs/                      # Cấu hình ELK/triển
 │
 ├── experiments/
 │   ├── e1/
@@ -63,8 +63,8 @@ hybrid-nids-soar-elk-llm/
 │   └── overlap_shingles.py
 │
 ├── reproducibility/              # Dự kiến: manifest dữ liệu, kết quả và lệnh chạy
-├── docs/                         # Kiến trúc, protocol, giới hạn, đạo đức nghiên cứu
-└── publication/                  # Thông tin công bố và các tuyên bố đã xác minh
+├── docs/                         # Kiến trúc, protocol, giới hạn
+└── publication/                
 ```
 
 ## Thực nghiệm và bằng chứng E1–E7
