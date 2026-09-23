@@ -1,5 +1,3 @@
-# Kho mã nguồn và bằng chứng tái lập nghiên cứu
-
 ## Giới thiệu
 
 Repository dự kiến kết hợp hai phân hệ nghiên cứu:
