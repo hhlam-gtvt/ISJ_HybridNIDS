@@ -1,0 +1,23 @@
+{
+  "observer": "E7_LAM_OBSERVER_v1_READ_ONLY",
+  "campaign_id": "E7_PILOT_20260921_RUN02",
+  "start_utc": "2026-09-21T04:34:00.430+00:00",
+  "end_utc": "2026-09-21T07:34:00.702+00:00",
+  "hours_planned": 3.0,
+  "sample_interval_s": 60,
+  "db_path": "/home/lam/restore_soar/elk/e7_lam/results/E7_PILOT_20260921/e7_soar.db",
+  "db_observer_mode": "SQLite URI mode=ro; query_only=ON",
+  "initial_alerts_max_id_excluded": 1,
+  "initial_queue_max_id": 1,
+  "manual_sampling": "FIRST_PER_UTC_HOUR_AND_PROVENANCE_EVIDENCE_STRATUM_PLUS_SHA256_ES_ID_MOD_10_EQ_0",
+  "cpu_ram_scope": "HOST (not SOAR-only)",
+  "disk_io_scope": "NOT_INSTRUMENTED",
+  "drift_alarm_source": "NOT_INSTRUMENTED",
+  "truth_coverage": "UNVERIFIED_NO_FPR",
+  "final_audit_join": "NOT_INSTRUMENTED_BY_THIS_OBSERVER",
+  "completed_24h": false,
+  "observer_errors": 0,
+  "observation_count": 181,
+  "elapsed_hours": 3.00006,
+  "termination": "PLANNED_END"
+}

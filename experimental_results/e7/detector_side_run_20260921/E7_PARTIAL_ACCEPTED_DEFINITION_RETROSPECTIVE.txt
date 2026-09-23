@@ -1,0 +1,31 @@
+E7 RETROSPECTIVE REVIEW-OUTCOME DEFINITION
+
+Status:
+  Post-run documentation amendment.
+  This definition was NOT preregistered before E7_CUONG_FULL_20260921T101315Z
+  and must not be represented as a historically frozen rule.
+
+ACCEPTED
+  The sampled incident can be traced to the declared source session and the
+  evidence required for its recorded provenance tier is internally consistent.
+  No material discrepancy is found in incident identity, source linkage,
+  timing basis, or detector evidence used by that tier.
+
+PARTIAL_ACCEPTED
+  The incident identity and source session are traceable and at least one
+  material evidence path is verifiable, but one or more fields/evidence links
+  required to fully validate the recorded incident are missing, unavailable,
+  or materially incomplete. The discrepancy does not overturn the incident
+  identity, but it prevents full acceptance. Such a record may support
+  continuity/provenance observations only and must not be upgraded into a
+  stronger detector-correctness or autonomous-response claim.
+
+REJECTED
+  A material mismatch exists in incident identity, source-session linkage,
+  provenance tier, timing/correlation basis, or detector evidence such that
+  the recorded incident cannot be supported by the preserved evidence.
+
+Important:
+  Absence of a Suricata alert is not by itself grounds for PARTIAL_ACCEPTED
+  when the recorded provenance tier is RF_ONLY_REVIEW. Review is against the
+  evidence contract of the tier actually recorded.

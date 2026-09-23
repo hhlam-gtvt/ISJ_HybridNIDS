@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use these data or scripts, please cite the manuscript below."
+title: "ISJ_HybridNIDS: data and code"
+authors:
+  - family-names: "Tang"
+    given-names: "Quoc Cuong"
+  - family-names: "Huynh"
+    given-names: "Hoang Lam"
+  - family-names: "Phan"
+    given-names: "Van Tri"
+  - family-names: "Nguyen"
+    given-names: "An Khuong"
+repository-code: "https://github.com/hhlam-gtvt/ISJ_HybridNIDS"
+preferred-citation:
+  type: article
+  title: "Provenance-Aware Post-Alert Routing for Hybrid Network Intrusion Detection under Domain Shift: A Checked Policy and a Laboratory Evaluation"
+  authors:
+    - family-names: "Tang"
+      given-names: "Quoc Cuong"
+    - family-names: "Huynh"
+      given-names: "Hoang Lam"
+    - family-names: "Phan"
+      given-names: "Van Tri"
+    - family-names: "Nguyen"
+      given-names: "An Khuong"
+  journal: "Journal of Science and Technology on Information Security"
+  year: 2026
+  notes: "Submitted"

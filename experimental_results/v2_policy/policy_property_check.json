@@ -1,0 +1,71 @@
+{
+  "literal": {
+    "reading": "literal",
+    "domain_size": 3840,
+    "inputs_matching_more_than_one_row": 3319,
+    "undefined_inputs": 2,
+    "undefined_provenance_values": [
+      "both_uncorrelated",
+      "none"
+    ],
+    "deterministic": true,
+    "monotonicity_violations": 4,
+    "monotonicity_violation_kinds": [
+      [
+        "both_uncorrelated",
+        "low",
+        "monitor",
+        "rf_only",
+        "watchlist"
+      ],
+      [
+        "both_uncorrelated",
+        "low",
+        "monitor",
+        "sur_only",
+        "analyst_triage"
+      ],
+      [
+        "both_uncorrelated",
+        "missing",
+        "monitor",
+        "rf_only",
+        "watchlist"
+      ],
+      [
+        "both_uncorrelated",
+        "missing",
+        "monitor",
+        "sur_only",
+        "analyst_triage"
+      ]
+    ],
+    "containment_precondition_violations": 0,
+    "route_counts": {
+      "None": 2,
+      "safety_hold": 3825,
+      "monitor": 6,
+      "watchlist": 3,
+      "analyst_triage": 3,
+      "containment_proposal": 1
+    }
+  },
+  "repaired": {
+    "reading": "repaired",
+    "domain_size": 3840,
+    "inputs_matching_more_than_one_row": 3319,
+    "undefined_inputs": 0,
+    "undefined_provenance_values": [],
+    "deterministic": true,
+    "monotonicity_violations": 0,
+    "monotonicity_violation_kinds": [],
+    "containment_precondition_violations": 0,
+    "route_counts": {
+      "monitor": 11,
+      "safety_hold": 3825,
+      "watchlist": 1,
+      "analyst_triage": 2,
+      "containment_proposal": 1
+    }
+  }
+}

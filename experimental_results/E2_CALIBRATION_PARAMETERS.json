@@ -1,0 +1,35 @@
+{
+  "V2a_platt_devcal": {
+    "method": "Platt scaling (LogisticRegression on inverted V1 scores)",
+    "fit_partition": "DEV_CAL",
+    "slope": 3.586908,
+    "intercept": 5.770532,
+    "formula": "P(attack) = sigmoid(slope * (1 - V1_score) + intercept)"
+  },
+  "V2b_isotonic_devcal": {
+    "method": "Isotonic regression on inverted V1 scores",
+    "fit_partition": "DEV_CAL",
+    "n_breakpoints": 6,
+    "x_min": 0.068178,
+    "x_max": 0.669458
+  },
+  "ECE_specification": {
+    "method": "Expected Calibration Error",
+    "n_bins": 10,
+    "bin_scheme": "equal_width",
+    "bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "formula": "ECE = sum_b (n_b/N) * |avg_confidence_b - avg_accuracy_b|"
+  }
+}

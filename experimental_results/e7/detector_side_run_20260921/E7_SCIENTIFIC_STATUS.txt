@@ -1,0 +1,60 @@
+E7 v1.5 SCIENTIFIC STATUS — POST-RUN CLOSEOUT
+
+Run:
+  E7_CUONG_FULL_20260921T101315Z
+  Runner v1.5
+
+Execution status:
+  COMPLETE
+
+Observed execution evidence:
+  - 89/89 cycles
+  - 15 sessions per cycle
+  - 1,335 replay-ledger rows
+  - 1,335 incident-stream rows
+  - 1,335/1,335 tcpreplay returncode 0
+  - packet accounting marked OK for all rows
+  - sender failed packets total: 445
+  - elapsed wall-clock interval from first replay start to final replay end:
+    25.952953 hours
+
+Observed provenance tiers:
+  RF_ONLY_REVIEW     1,068 incidents
+  HYBRID_CORRELATED    267 incidents
+
+Claim scope preserved by incident records:
+  "alert/incidence rates only; no FPR"
+
+Drift observation:
+  E7_DRIFT_1MIN.csv contains 1,561 rows.
+  1,559 rows raised drift_alarm=1 and 2 were INSUFFICIENT_DATA.
+  This supports persistent divergence from the frozen Development-normal
+  PSI reference during this replay workload. Because the same 15 stored
+  E1 Test PCAPs were repeated, it must not be described as independently
+  collected temporal drift.
+
+Resource-measurement limitation:
+  Resource values are retained as raw operational observations only.
+  Multiple orphan/live-drift worker processes and a pathological
+  scikit-learn warning storm were present during the run. Therefore the
+  resource series must not be presented as a clean benchmark of Hybrid-NIDS
+  resource cost without an explicit instrumentation-confound limitation.
+
+Primary scientific limitation:
+  The 25.95-hour workload repeatedly replayed the same 15 stored E1 Test
+  PCAPs. It is NOT a newly collected 24–48 h traffic corpus with fresh
+  ground truth. Therefore this run is suitable as a supplementary
+  endurance/continuity replay experiment, but it does not by itself satisfy
+  the requested "new traffic with ground truth" E7 requirement.
+
+Manual review:
+  52 deterministic sampling-ledger rows were generated, but reviewer,
+  review_time_utc, validation_outcome, and notes are all blank.
+  Therefore manual review is currently 0 completed samples.
+
+Overall classification:
+  EXECUTION INTEGRITY: COMPLETE
+  SUPPLEMENTARY ENDURANCE REPLAY: COMPLETE
+  MANUAL REVIEW REQUIREMENT: NOT COMPLETE
+  NEW-TRAFFIC GROUND-TRUTH REQUIREMENT: NOT SATISFIED BY THIS RUN
+  PRIMARY E7 SCIENTIFIC REQUIREMENT: NOT COMPLETE

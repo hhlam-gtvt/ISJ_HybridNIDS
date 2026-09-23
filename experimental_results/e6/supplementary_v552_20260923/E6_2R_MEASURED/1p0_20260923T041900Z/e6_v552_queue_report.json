@@ -1,0 +1,51 @@
+{
+  "scope": "E6_v552_SOAR_incident_queue; verify integrated NIDS ground truth and observation window separately",
+  "sampled_utc": "2026-09-23T04:22:22.027478+00:00",
+  "run_ids": [
+    "laptop_1p0_20260923T041900Z"
+  ],
+  "alert_flow_members": 2431,
+  "incident_groups_total": 7,
+  "incident_groups_open": 0,
+  "incident_groups_queued": 7,
+  "flow_per_group_max": 802,
+  "flow_group_mapping_consistent": true,
+  "flow_group_mapping_mismatches": {},
+  "queued_groups_missing_queue_row": [],
+  "queue_status": {
+    "DONE": 7
+  },
+  "queue_incomplete": 0,
+  "queue_dead": 0,
+  "queue_done": 7,
+  "flow_category_counts": {
+    "Normal": 75,
+    "PortScan": 2356
+  },
+  "normal_category_with_alert_kind": 75,
+  "session_flow_counts": {
+    "E1_TEST_NORMAL_01": 25,
+    "E1_TEST_NORMAL_02": 25,
+    "E1_TEST_NORMAL_03": 25,
+    "E1_TEST_SCAN_01": 781,
+    "E1_TEST_SCAN_02": 773,
+    "E1_TEST_SCAN_03": 802
+  },
+  "llm_policy_decisions": [
+    {
+      "route": "LLM_RESERVED",
+      "mode": "MEDIUM_PRE",
+      "count": 2
+    },
+    {
+      "route": "STATIC_RAG",
+      "mode": "LOW_MONITOR",
+      "count": 4
+    }
+  ],
+  "llm_call_reservations": 2,
+  "llm_calls_observed_in_route_csv": 2,
+  "llm_http_attempts_observed_in_route_csv": 2,
+  "llm_route_csv_present": true,
+  "note": "A reserved LLM call is NOT evidence of model HTTP execution; use observed routing CSV attempts. No queue DONE assertion for OPEN groups. Normal alerts are preserved, not silently excluded."
+}

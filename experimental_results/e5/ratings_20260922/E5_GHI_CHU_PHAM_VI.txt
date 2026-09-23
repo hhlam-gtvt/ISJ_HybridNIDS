@@ -1,0 +1,23 @@
+E5 — PHAM VI VA LUU Y KHI NOP
+
+1. Bo ket qua: 30 incident, 210 dau ra; ba che do
+   deterministic-only, always-LLM, selective-LLM.
+2. Bang diem: 210 dau ra x 2 nguoi cham = 420 dong.
+   Nguon diem R1/R2 theo xac nhan cua nguoi thuc hien:
+   hai chuyen gia truc tiep cham doc lap; nguoi thuc hien
+   nhap lai diem vao CSV. Luu phieu diem goc va phan hoi
+   doi chieu cua tung nguoi cham rieng, khong cong khai
+   danh tinh trong bang diem.
+3. Inter-rater agreement: xem file e5_human_agreement.json.
+   Kappa cua bon tieu chi gan 0; khong mo ta la dong thuan cao.
+4. 30 LAB duoc anh xa ve cac phien E1 local lab co
+   partition=TEST; khong dong nhat voi bo 15 phien E1
+   Test da dong bang truoc do.
+5. Metadata cohort='E1 Test' la ban hieu chinh phuc vu
+   E5. File E1 goc va cac ket qua E5 goc duoc giu nguyen.
+6. independent_incident_review=PENDING_HUMAN_VERIFICATION
+   va main_protocol_approved=False trong ho so hien co.
+   Khong xem cac co nay la da duoc xac nhan/phe duyet.
+7. Static-RAG khong dung LLM va cac phien normal:
+   hang muc mo rong neu con thoi gian, chua nam trong
+   bo ket qua 210 dau ra nay.

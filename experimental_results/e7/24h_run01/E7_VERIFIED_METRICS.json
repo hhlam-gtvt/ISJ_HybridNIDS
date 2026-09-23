@@ -1,0 +1,27 @@
+{
+  "run_id": "E7_24H_20260921_RUN01",
+  "source_archive": "E7_FINAL_BACKUP_20260922.tar.gz",
+  "archive_sha256": "94323442c57996685148c7bf5c3fa1eba4f1f4bee974b562b22149e3c09fbcfb",
+  "observer_samples": 1441,
+  "observer_duration_seconds": 86400.0,
+  "replay_created": 288,
+  "source_documents": 288,
+  "source_document_hashes_match": 288,
+  "source_equal_port_frequency": 288,
+  "source_category_counts": {
+    "Exploits": 129,
+    "PortScan": 159
+  },
+  "alerts": 288,
+  "queue_done": 288,
+  "queue_errors": 0,
+  "pending_approval_execution": 285,
+  "low_success": 3,
+  "manual_selected": 56,
+  "manual_completed": 0,
+  "provenance_unknown": 288,
+  "evidence_tier_unknown": 288,
+  "sqlite_integrity": "ok",
+  "original_source_jsonl_literal_delimiters": 288,
+  "source_document_original_bytes_sha256": "6d94576f4ad85d8ff32b1f0ae5e284f9c8b0d646df9a9c343050ff55431db00a"
+}

@@ -1,0 +1,11 @@
+source,comparison,b,c,discordant,p_value
+primary,S1_vs_S2,3,12,15,0.0352
+primary,S1_vs_S3,0,0,0,1.0
+primary,S1_vs_S4,3,12,15,0.0352
+primary,S1_vs_S5,3,8,11,0.2266
+primary,S1_vs_S6,3,12,15,0.0352
+supplementary,S1_vs_S2,3,6,9,0.5078
+supplementary,S1_vs_S3,0,0,0,1.0
+supplementary,S1_vs_S4,3,6,9,0.5078
+supplementary,S1_vs_S5,3,3,6,1.0
+supplementary,S1_vs_S6,3,6,9,0.5078

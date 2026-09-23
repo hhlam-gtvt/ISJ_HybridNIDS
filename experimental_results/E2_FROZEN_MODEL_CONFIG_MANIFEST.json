@@ -1,0 +1,42 @@
+{
+  "document": "E2_FROZEN_MODEL_CONFIG_MANIFEST",
+  "frozen_utc": "2026-09-19T03:14:34+00:00",
+  "status": "PASS FINAL — non-confirmatory retrospective evaluation",
+
+  "development_split": {
+    "DEV_TRAIN": {"sessions": 10, "flows": 137572, "role": "Model fitting (V3, V4)"},
+    "DEV_CAL": {"sessions": 5, "flows": 66654, "role": "Calibrator fitting (V2a, V2b) + threshold selection (all)"}
+  },
+  "evaluation": {
+    "TEST": {"sessions": 15, "flows": 203677, "role": "Retrospective frozen re-evaluation only"}
+  },
+  "calibration": {"partition": "DEV_CAL only"},
+  "threshold_selection": {"partition": "DEV_CAL only", "criterion": "F1 maximization"},
+  "V3_training": {"partition": "DEV_TRAIN only", "features": "RF-21 (21 features)"},
+  "V4_training": {"partition": "DEV_TRAIN only", "features": "RF-20 (RF-21 excluding ct_state_ttl)"},
+  "canonical_retrained_model": {"seed": 42, "note": "Designated before viewing multi-seed Test results"},
+  "multi_seed_audit": {"seeds": [7, 21, 42, 101, 2026]},
+  "confirmatory_claim": "NO",
+
+  "thresholds": {
+    "V1_source_direct": 0.8528152217872779,
+    "V1_inverted": 0.05,
+    "V2a_platt": 0.05,
+    "V2b_isotonic": 0.05,
+    "V3_RF21_seed42": 0.05,
+    "V4_noTTL_seed42": 0.05
+  },
+
+  "source_model": {
+    "file": "models/rf21_schema_gap/nids_rf21_schema_gap_pipeline.pkl",
+    "sha256": "e3acec66c2e54733765b93e6e4e2b6634a0eca0de7c6ecef30acd4c5f2fea035"
+  },
+
+  "referenced_freeze_documents": [
+    "e2_artifacts/freeze/E2_SPLIT_DEFINITION.json",
+    "e2_artifacts/freeze/E2_CONFIG_FREEZE.json",
+    "e2_artifacts/freeze/E2_THRESHOLD_FREEZE.json",
+    "e2_artifacts/freeze/E2_CALIBRATION_PARAMETERS.json",
+    "e2_artifacts/freeze/E2_MODEL_LINEAGE.json"
+  ]
+}

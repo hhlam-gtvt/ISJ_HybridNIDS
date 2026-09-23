@@ -1,0 +1,19 @@
+source,strategy,strategy_name,window,TP,FP,FN,TN,Recall,Specificity,FPR,BalAcc,CI_lo,CI_hi
+primary,S1,Suricata-only,60,0,0,12,3,0.0,1.0,0.0,0.5,0.5,0.5
+primary,S2,RF-only,60,12,3,0,0,1.0,0.0,1.0,0.5,0.5,0.5
+primary,S3,Strict AND (correlation-aware),60,0,0,12,3,0.0,1.0,0.0,0.5,0.5,0.5
+primary,S4,Permissive OR,60,12,3,0,0,1.0,0.0,1.0,0.5,0.5,0.5
+primary,S5,Weighted evidence,60,8,3,4,0,0.667,0.0,1.0,0.333,0.21,0.46
+primary,S6,Evidence-aware routing,60,12,3,0,0,1.0,0.0,1.0,0.5,0.5,0.5
+supplementary,S1,Suricata-only,60,6,0,6,3,0.5,1.0,0.0,0.75,0.63,0.88
+supplementary,S2,RF-only,60,12,3,0,0,1.0,0.0,1.0,0.5,0.5,0.5
+supplementary,S3,Strict AND (correlation-aware),60,6,0,6,3,0.5,1.0,0.0,0.75,0.63,0.88
+supplementary,S4,Permissive OR,60,12,3,0,0,1.0,0.0,1.0,0.5,0.5,0.5
+supplementary,S5,Weighted evidence,60,9,3,3,0,0.75,0.0,1.0,0.375,0.25,0.50
+supplementary,S6,Evidence-aware routing,60,12,3,0,0,1.0,0.0,1.0,0.5,0.5,0.5
+primary,S3,Strict AND (correlation-aware),10,0,0,12,3,0.0,1.0,0.0,0.5,0.5,0.5
+primary,S3,Strict AND (correlation-aware),30,0,0,12,3,0.0,1.0,0.0,0.5,0.5,0.5
+primary,S3,Strict AND (correlation-aware),120,0,0,12,3,0.0,1.0,0.0,0.5,0.5,0.5
+supplementary,S3,Strict AND (correlation-aware),10,4,0,8,3,0.333,1.0,0.0,0.667,0.54,0.79
+supplementary,S3,Strict AND (correlation-aware),30,6,0,6,3,0.5,1.0,0.0,0.75,0.63,0.88
+supplementary,S3,Strict AND (correlation-aware),120,6,0,6,3,0.5,1.0,0.0,0.75,0.63,0.88

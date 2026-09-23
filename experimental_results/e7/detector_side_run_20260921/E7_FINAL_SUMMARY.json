@@ -1,0 +1,18 @@
+{
+  "run_id": "E7_CUONG_FULL_20260921T101315Z",
+  "runner_version": "v1.5",
+  "mode": "full",
+  "cycles_requested": 89,
+  "session_replays_expected": 1335,
+  "session_replays_recorded": 1335,
+  "incidents_recorded": 1335,
+  "active_source_duration_expected_s": 86582.248161,
+  "packet_accounting_all_ok": true,
+  "replay_failure_rows": 0,
+  "sender_failed_packets_total": 445,
+  "correlation_clock_basis": "explicit session-relative offset matching",
+  "fpr_reported": false,
+  "status": "COMPLETE",
+  "instrumentation_validation": "PASS",
+  "created_utc": "2026-09-22T12:13:49.172270Z"
+}

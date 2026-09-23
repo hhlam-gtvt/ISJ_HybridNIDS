@@ -1,0 +1,52 @@
+{
+  "frozen_utc": "2026-09-19T03:14:34.749094+00:00",
+  "protocol": "E2 v2.1 — Strict Evaluation Protocol",
+  "boundary": {
+    "DEV_TRAIN": "Model fitting (V3/V4)",
+    "DEV_CAL": "Calibrator fitting (V2a/V2b) + threshold/policy selection (all variants)",
+    "TEST": "Retrospective frozen re-evaluation only"
+  },
+  "split_definition": "e2_artifacts/freeze/E2_SPLIT_DEFINITION.json",
+  "seeds": [
+    7,
+    21,
+    42,
+    101,
+    2026
+  ],
+  "canonical_seed": 42,
+  "threshold_criterion": "F1_maximization_on_DEV_CAL",
+  "thresholds": {
+    "V1_source_direct": 0.8528152217872779,
+    "V1_inverted": 0.05,
+    "V2a_platt_devcal": 0.05,
+    "V2b_isotonic_devcal": 0.05,
+    "V3_RF21_seed42": 0.05,
+    "V4_noTTL_seed42": 0.05
+  },
+  "calibrators": {
+    "V2a_platt_devcal": {
+      "path": "e2_artifacts/calibrators/V2a_platt.pkl",
+      "sha256": "c9ed9acb6c2530f19c3ff4ce451eff98431982876065be8b76e0c2d14b0472e6",
+      "fit_on": "DEV_CAL"
+    },
+    "V2b_isotonic_devcal": {
+      "path": "e2_artifacts/calibrators/V2b_isotonic.pkl",
+      "sha256": "5df8f58b80b797594e749f856cc7df995ffce0301a1f0fb455c8fcc8e5729b56",
+      "fit_on": "DEV_CAL"
+    }
+  },
+  "models": {
+    "V3_RF21_seed42": {
+      "path": "e2_artifacts/models/V3_seed42.pkl",
+      "sha256": "2ffff7baebe6bcaaa1396d880fdc615c457e10320a02f409d6c37ab78edb86e1",
+      "trained_on": "DEV_TRAIN"
+    },
+    "V4_noTTL_seed42": {
+      "path": "e2_artifacts/models/V4_seed42.pkl",
+      "sha256": "dd03a9e445231f3979712ffe0dc37b082e9402cacdcd9a26ccacc8bbe53f7473",
+      "trained_on": "DEV_TRAIN"
+    }
+  },
+  "test_disclosure": "Test predictions were examined during E2 v1.0-v1.2 iterative development. v2.1 thresholds selected exclusively from DEV_CAL. Test results are retrospective frozen re-evaluation."
+}

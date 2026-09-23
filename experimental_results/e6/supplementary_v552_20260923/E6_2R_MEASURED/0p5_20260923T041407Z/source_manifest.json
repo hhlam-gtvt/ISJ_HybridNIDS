@@ -1,0 +1,15 @@
+{
+  "tag": "0p5",
+  "archived_rate": "0.5",
+  "archived_provenance": "MEASURED_OLD_RUN",
+  "input_sha256": "04820d36af3691482dfa92806a2eb5ae70b82e483b2f096732e8c18ad8c161fb",
+  "total_documents": 4577,
+  "alert_flows": 4577,
+  "archive_ingress_span_s": 215.121,
+  "archive_ingress_basis": "source_queue_created_at is proxy for observed arrival",
+  "run_id": "laptop_0p5_20260923T041407Z",
+  "es_index": "e6-v552-laptop-0p5-20260923t041407z",
+  "start_utc": "2026-09-23T04:14:07.491+00:00",
+  "scope": "ISOLATED_LAPTOP_SOAR_REPLAY_NOT_NEW_NIDS_TRAFFIC",
+  "replay_speed": "archived queue-created wall-time offsets, 1:1"
+}

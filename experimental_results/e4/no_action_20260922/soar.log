@@ -1,0 +1,23 @@
+[+] Static RAG: knowledge_base.json | version=1.1.0 | method=EXACT_CATEGORY_MATCH
+[RECOVERY] Không có incident bị kẹt EXECUTING.
+[+] Đã tự tạo Elasticsearch index: e4-laptop-no-action-run01
+================================================================
+SOAR ORCHESTRATOR 8.0 FINAL - POST-BLOCK LLM ADVISORY FOR ADMIN
+ES: http://127.0.0.1:9200/e4-laptop-no-action-run01
+Workers: 1
+Ollama: http://127.0.0.1:11434 | model=llama3.2:3b
+Static RAG: knowledge_base.json | exact match | no vector DB
+Whitelist: IP/CIDR | dual gate | FAIL-CLOSED
+Firewall: DRY-RUN
+API auth: LOCAL LAB BYPASS
+================================================================
+[!] Telegram tắt vì chưa cấu hình TG_TOKEN/TG_CHAT_ID.
+[+] API LAB: localhost được phép thao tác không cần API key.
+[+] API: http://127.0.0.1:5053
+[API] 127.0.0.1 - "GET /health HTTP/1.1" 200 -
+[API] 127.0.0.1 - "GET /health HTTP/1.1" 200 -
+[+] Đồng bộ 3 document vào durable queue.
+[+] worker-1: EVT_TEST_NORMAL_01_001 | NORMAL -> NO_ACTION
+[+] worker-1: EVT_TEST_NORMAL_02_001 | NORMAL -> NO_ACTION
+[+] worker-1: EVT_TEST_NORMAL_03_001 | NORMAL -> NO_ACTION
+[API] 127.0.0.1 - "GET /health HTTP/1.1" 200 -

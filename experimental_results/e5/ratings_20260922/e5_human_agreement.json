@@ -1,0 +1,74 @@
+{
+  "method": "linear weighted Cohen kappa, paired human scores, incident-cluster bootstrap (percentile 95% CI)",
+  "bootstrap_replicates": 1000,
+  "independent_incident_clusters": 30,
+  "number_of_paired_outputs": 210,
+  "criteria": {
+    "factual_correctness_1_5": {
+      "kappa_linear": -0.017606,
+      "ci95_cluster_bootstrap": [
+        -0.087205,
+        0.050984
+      ],
+      "valid_bootstrap_replicates": 1000,
+      "exact_agreement": 0.214286,
+      "mean_R1": 3.7667,
+      "mean_R2": 3.0429
+    },
+    "evidence_traceability_1_5": {
+      "kappa_linear": 0.023329,
+      "ci95_cluster_bootstrap": [
+        -0.069253,
+        0.124488
+      ],
+      "valid_bootstrap_replicates": 1000,
+      "exact_agreement": 0.233333,
+      "mean_R1": 3.5381,
+      "mean_R2": 2.9143
+    },
+    "actionability_1_5": {
+      "kappa_linear": -0.016454,
+      "ci95_cluster_bootstrap": [
+        -0.08349,
+        0.049203
+      ],
+      "valid_bootstrap_replicates": 1000,
+      "exact_agreement": 0.214286,
+      "mean_R1": 3.7286,
+      "mean_R2": 2.9905
+    },
+    "workload_1_5_lower_better": {
+      "kappa_linear": 0.043223,
+      "ci95_cluster_bootstrap": [
+        -0.050036,
+        0.128661
+      ],
+      "valid_bootstrap_replicates": 1000,
+      "exact_agreement": 0.252381,
+      "mean_R1": 2.819,
+      "mean_R2": 2.8048
+    }
+  },
+  "mode_incident_means": {
+    "factual_correctness_1_5": {
+      "deterministic_only": 3.25,
+      "always_llm": 3.48889,
+      "selective_llm": 3.37222
+    },
+    "evidence_traceability_1_5": {
+      "deterministic_only": 3.16667,
+      "always_llm": 3.16111,
+      "selective_llm": 3.31111
+    },
+    "actionability_1_5": {
+      "deterministic_only": 3.16667,
+      "always_llm": 3.45,
+      "selective_llm": 3.33333
+    },
+    "workload_1_5_lower_better": {
+      "deterministic_only": 2.6,
+      "always_llm": 2.76667,
+      "selective_llm": 2.92778
+    }
+  }
+}

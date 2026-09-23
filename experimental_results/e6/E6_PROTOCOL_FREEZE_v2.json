@@ -1,0 +1,203 @@
+{
+  "protocol_id": "E6_PROTOCOL_FREEZE_v2",
+  "status": "FROZEN_BEFORE_FINAL_MEASURED_RUNS",
+  "frozen_at_utc": "2026-09-19T13:54:50.133169+00:00",
+  "objective": "Measure end-to-end Hybrid-NIDS performance under controlled packet replay at 0.5x, 1x, 2x and maximum sustainable rate.",
+  "traffic_profile": {
+    "workload_type": "session-concatenated E1 Test PCAP replay",
+    "session_count": 8,
+    "fixed_order": [
+      "E1_TEST_NORMAL_01",
+      "E1_TEST_NORMAL_02",
+      "E1_TEST_NORMAL_03",
+      "E1_TEST_SCAN_01",
+      "E1_TEST_SCAN_02",
+      "E1_TEST_SCAN_03",
+      "E1_TEST_EXPLOIT_01",
+      "E1_TEST_EXPLOIT_02"
+    ],
+    "total_packets": 50622,
+    "sum_capture_duration_s": 115.322479,
+    "total_size_bytes": 5823049,
+    "inter_session_idle_gap_added_s": 0,
+    "required_rates_x": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "excluded_from_primary": [
+      "E1_TEST_EXPLOIT_03",
+      "E1_TEST_DOS_01",
+      "E1_TEST_DOS_02",
+      "E1_TEST_DOS_03",
+      "literal test/$1 capture"
+    ],
+    "exclusion_note": "Primary E6 workload is frozen before final performance runs. DoS may be used only as a separately labelled stress diagnostic and must not replace the frozen primary workload."
+  },
+  "repetitions": {
+    "warm_up_runs_per_reported_rate": 1,
+    "measured_repetitions_per_reported_rate": 5,
+    "warm_up_excluded_from_statistics": true,
+    "minimum_between_run_condition": "Previous processes stopped, response queue drained or timeout recorded, and at least 30 seconds idle before the next measured run."
+  },
+  "canonical_detector": {
+    "variant": "V3_RF21_seed42",
+    "model_path": "models/e6_v3/V3_seed42.pkl",
+    "model_sha256": "2ffff7baebe6bcaaa1396d880fdc615c457e10320a02f409d6c37ab78edb86e1",
+    "schema_path": "models/e6_v3/feature_schema_rf21.json",
+    "schema_sha256": "c244f7776f1d277a626f38e4d16d896bb98250d2febd98fac2bb1f7535c76ada",
+    "metadata_path": "models/e6_v3/metadata_e6_v3.json",
+    "metadata_sha256": "da9b5b029c1d43d1cb762092d57b531f13e27e04ad33dc41c8b4a0fd54115274",
+    "feature_count": 21,
+    "canonical_seed": 42,
+    "threshold": 0.05,
+    "threshold_selected_on": "DEV_CAL",
+    "trained_on": "DEV_TRAIN",
+    "calibrator": "none",
+    "retraining_in_e6": false,
+    "recalibration_in_e6": false,
+    "threshold_tuning_in_e6": false
+  },
+  "nfstream": {
+    "version": "6.6.0",
+    "source_mode": "live_interface",
+    "idle_timeout_s": 15,
+    "active_timeout_s": 30,
+    "bpf_filter": "net 192.168.10.0/24",
+    "batch_size": 4096,
+    "flow_expiration_definition": "Observed live flow expiration is timestamped when NFStreamer yields the expired flow. It is not inferred from offline PCAP processing."
+  },
+  "suricata": {
+    "version": "7.0.3",
+    "mode": "live isolated E6 interface",
+    "config_source": "/etc/suricata/suricata.yaml",
+    "config_source_sha256": "b23ef3fb06d8189f383c585b749bb9b0b156dbd7588361b49164df7d12e1f2d9",
+    "rules_file": "/var/lib/suricata/rules/suricata.rules",
+    "rules_sha256": "50c008fdc3ce2325e97f185bf4dbd66e31081ade365a6cda9925afdb780062da",
+    "version_disclosure": "E6 performance uses Suricata 7.0.3. It must not be reported as Suricata 8.0.4."
+  },
+  "response_pipeline": {
+    "elasticsearch_version": "8.12.0",
+    "dedicated_index": "e6-perf-final-v2",
+    "worker_count": 4,
+    "event_queue_capacity": 500,
+    "scan_interval_s": 1,
+    "max_retry": 3,
+    "llm_model": "llama3.2:3b",
+    "llm_concurrency": 1,
+    "llm_timeout_s": 180,
+    "host_firewall_allowed": false,
+    "sandbox_execution_target": "e4-fw",
+    "sandbox_container_network_mode": "bridge",
+    "sandbox_container_privileged": false,
+    "sandbox_container_capability": "CAP_NET_ADMIN",
+    "policy_semantics": "Do not force an execution action merely to obtain a timestamp. Primary traces preserve the frozen response policy. Execution timestamps are NA when policy does not invoke execution.",
+    "execution_control": "Actual execution-effect timing, when required, is validated separately inside the isolated e4-fw container and is not substituted for primary end-to-end traffic measurements."
+  },
+  "timestamp_fields": [
+    "t_packet_first",
+    "t_packet_last",
+    "t_flow_expired",
+    "t_detector_start",
+    "t_detector_output",
+    "t_normalization_start",
+    "t_normalized",
+    "t_es_index_start",
+    "t_es_indexed",
+    "t_queue_inserted",
+    "t_policy_start",
+    "t_policy_decision",
+    "t_llm_request",
+    "t_llm_response",
+    "t_exec_request",
+    "t_exec_effect",
+    "t_audit_complete"
+  ],
+  "timing_method": {
+    "wall_clock": "UTC Unix epoch timestamp for cross-process correlation",
+    "monotonic_clock": "time.perf_counter_ns() for elapsed-time measurements within each process",
+    "missing_stage_rule": "Use NA when a stage is not invoked. Never encode a missing timestamp or latency as zero."
+  },
+  "latency_definitions": {
+    "flow_assembly_duration": "t_packet_last - t_packet_first",
+    "flow_expiration_wait": "t_flow_expired - t_packet_last",
+    "post_expiration_detector_wait": "t_detector_start - t_flow_expired",
+    "detector_compute": "t_detector_output - t_detector_start",
+    "normalization": "t_normalized - t_normalization_start",
+    "elasticsearch_index": "t_es_indexed - t_es_index_start",
+    "queue_wait": "t_policy_start - t_queue_inserted",
+    "policy_compute": "t_policy_decision - t_policy_start",
+    "llm_wait": "t_llm_response - t_llm_request",
+    "execution_effect": "t_exec_effect - t_exec_request",
+    "post_flow_end_to_end": "t_audit_complete - t_flow_expired",
+    "packet_to_audit_end_to_end": "t_audit_complete - t_packet_first"
+  },
+  "drop_measurement": {
+    "packet_delivery": "Compare tcpreplay transmitted packet count with packet count observed on the isolated receive interface.",
+    "packet_drop_count": "max(0, transmitted_packets - receiver_observed_packets)",
+    "packet_drop_ratio": "packet_drop_count / transmitted_packets",
+    "suricata_capture_drop": "Record Suricata capture.kernel_drops or equivalent stats separately from replay-interface packet loss.",
+    "pipeline_flow_drop_count": "NFStreamer flows emitted minus flow records successfully normalized/indexed for the same run.",
+    "flow_reference_note": "Offline reference flow count may be reported as a validation reference but is not silently treated as a native NFStreamer drop counter."
+  },
+  "resource_metrics": [
+    "CPU",
+    "RAM",
+    "disk_read_bytes",
+    "disk_write_bytes",
+    "packet_drops",
+    "pipeline_flow_drops",
+    "response_queue_depth",
+    "durable_queue_state_counts",
+    "LLM_wait"
+  ],
+  "reported_latency_statistics": {
+    "percentiles": [
+      "P50",
+      "P95",
+      "P99"
+    ],
+    "confidence_level": 0.95,
+    "ci_method": "cluster bootstrap by measured repetition",
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 20260919,
+    "reporting_rule": "For each rate and stage, report estimate plus 95% CI. Measured repetitions are the resampling clusters."
+  },
+  "maximum_sustainable": {
+    "definition": "Highest validated replay multiplier for which all five measured repetitions satisfy every frozen acceptance criterion.",
+    "acceptance_criteria": {
+      "achieved_offered_rate_ratio_min": 0.95,
+      "packet_drop_ratio_max": 0.001,
+      "pipeline_flow_drop_count_max": 0,
+      "stage_failure_count_max": 0,
+      "queue_must_remain_bounded": true,
+      "queue_drain_timeout_s": 60
+    },
+    "search_procedure": {
+      "exploratory_runs_are_not_final_statistics": true,
+      "if_2x_passes": "Probe 4x, 8x, 16x and continue doubling until first failure.",
+      "if_2x_fails": "Bracket between the highest passing required rate and the lowest failing required rate.",
+      "if_0_5x_fails": "Probe 0.25x, 0.125x, 0.0625x and 0.03125x until a passing lower bound is found.",
+      "refinement": "Bisect the passing/failing bracket until the multiplier interval is no greater than 0.125x.",
+      "final_validation": "Run one warm-up plus five measured repetitions at the candidate MAX rate. If any measured repetition fails, step down to the next lower frozen search candidate and repeat validation.",
+      "no_pass_rule": "If no candidate down to 0.03125x passes, report that no maximum sustainable rate was established within the tested range. Do not invent a passing MAX value."
+    }
+  },
+  "software_environment": {
+    "python": "3.12.3",
+    "scikit_learn": "1.9.1",
+    "nfstream": "6.6.0",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "tcpreplay": "4.4.4"
+  },
+  "source_integrity": {
+    "nids_streaming_detector_sha256": "e0b70f827da5c962a7eff77e5b7ec9e5471eba5edc45317f76c4397dc9640c38",
+    "e6_trace_wrapper_sha256": "4f3d4a5522c2fce0e0e7208ccad80cba3ed477d781c78219ad42d25576c5665f",
+    "auto_responder2_sha256": "84f11fa2a1e14cc863c572b33be5c59f025b4aef925ace9c5c7e7d9ca6ac23dc"
+  },
+  "change_control": {
+    "rule": "After this freeze, no model, threshold, feature order, workload selection, warm-up count, repetition count, CI method or MAX acceptance criterion may be changed in response to measured results.",
+    "permitted_changes": "Instrumentation bug fixes are permitted only before final measured runs and must be versioned, hashed and documented. Any such change requires a new code hash but does not permit changing the frozen statistical acceptance criteria."
+  }
+}

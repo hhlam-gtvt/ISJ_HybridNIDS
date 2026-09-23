@@ -1,0 +1,42 @@
+{
+  "frozen_utc": "2026-09-19T04:16:48.434314+00:00",
+  "definitions": {
+    "flow": "One NFStream record in flows_rf21.csv. ID = {session_id}_{flow_index}",
+    "alert": "One event_type=alert line in eve.json after filtering. ID = {session_id}_{alert_seq}",
+    "event": "One session = one event (n=15). ID = session_id. GT: 0=normal, 1=attack"
+  },
+  "matching": {
+    "method": "one-to-many within same session",
+    "criterion": "|timestamp_alert - timestamp_flow| <= correlation_window",
+    "ip_port_match": "not required (single attacker-target pair per session)"
+  },
+  "primary_correlation_window_s": 60,
+  "sensitivity_windows_s": [
+    10,
+    30,
+    60,
+    120
+  ],
+  "suricata_primary": {
+    "source": "Original E1 EVE artifacts (Suricata 8.0.4 frozen environment)",
+    "filter": "Exclude SID 2200074 (checksum) + SID 9000001-9000010 (LAB runtime)",
+    "result": "0 non-excluded alerts on all 15 Test sessions"
+  },
+  "suricata_supplementary": {
+    "source": "Offline replay with Suricata 7.0.3, rules SHA 50c008fd, -k none",
+    "deviation": "Engine version 7.0.3 != frozen 8.0.4; rules updated 2026-09-17",
+    "result": "ET behavioral on EXPLOIT\u00d73; stream built-in on DOS\u00d73; 0 on others"
+  },
+  "rf_source": "V3_RF21_seed42 from E2 v2.1 (trained on DEV_TRAIN, threshold on DEV_CAL)",
+  "rf_threshold": 0.05,
+  "strategies": {
+    "S1": "Suricata-only: detected = has_alerts_after_filter",
+    "S2": "RF-only: detected = any flow with score >= threshold",
+    "S3": "Strict AND: S1 AND S2",
+    "S4": "Permissive OR: S1 OR S2",
+    "S5": "Weighted evidence (exploratory): combined_score > 0.3",
+    "S6": "Full evidence-aware routing: detected = S1 OR S2, with routing tier"
+  },
+  "mcnemar": "S1 vs S6, two-sided, alpha=0.05, exploratory n=15",
+  "bootstrap": "Session-stratified (12 attack + 3 normal), 10000 resamples"
+}

@@ -1,0 +1,69 @@
+[+] Static RAG: knowledge_base.json | version=1.1.0 | method=EXACT_CATEGORY_MATCH
+================================================================
+E6 INSTRUMENTED RESPONSE PIPELINE
+Trace output: /root/elk/experimental_results/E6_2R_LAPTOP_MEASURED/0p5_20260923T041407Z/e6_response_trace.csv
+Run ID: laptop_0p5_20260923T041407Z
+Rate: 0.5
+Rep: 0
+ES index: e6-v552-laptop-0p5-20260923t041407z
+DB: /root/elk/experimental_results/E6_2R_LAPTOP_MEASURED/0p5_20260923T041407Z/e6_response_lam.db
+FIREWALL=DRY_RUN; TG=DISABLED; no namespace/tcpreplay
+================================================================
+[RECOVERY] Không có incident bị kẹt EXECUTING.
+================================================================
+SOAR ORCHESTRATOR 8.0 FINAL - POST-BLOCK LLM ADVISORY FOR ADMIN
+ES: http://localhost:9200/e6-v552-laptop-0p5-20260923t041407z
+Workers: 4
+Ollama: http://127.0.0.1:11434 | model=llama3.2:3b
+Static RAG: knowledge_base.json | exact match | no vector DB
+Whitelist: IP/CIDR | dual gate | FAIL-CLOSED
+Firewall: DRY-RUN
+API auth: LOCAL LAB BYPASS
+================================================================
+[!] Telegram tắt vì chưa cấu hình TG_TOKEN/TG_CHAT_ID.
+[+] API LAB: localhost được phép thao tác không cần API key.
+[+] API: http://127.0.0.1:5507
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 NORMAL QUARANTINE] e6_laptop_0p5_20260923T041407Z_INC_e590c049ea714f391284afeb member_count=25 queue ACK only; manual label review required
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 NORMAL QUARANTINE] e6_laptop_0p5_20260923T041407Z_INC_0e836ce4fc592feb012bec7c member_count=24 queue ACK only; manual label review required
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 NORMAL QUARANTINE] e6_laptop_0p5_20260923T041407Z_INC_0ee6f94d41cc5fbe5df81d07 member_count=25 queue ACK only; manual label review required
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-4: e6_laptop_0p5_20260923T041407Z_INC_1b944f09333d7d6ef9ad5f22 | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-1: e6_laptop_0p5_20260923T041407Z_INC_47e79d83d94739b0cb5976ad | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] LLM MEDIUM_PRE ACCEPTED | model=llama3.2:3b | grounding=85/100 | 60.606s
+[+] worker-2: e6_laptop_0p5_20260923T041407Z_INC_a1594cf30ee449036038427e | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-1: e6_laptop_0p5_20260923T041407Z_INC_0dfde71202698183f099886d | EXPLOIT | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-2: e6_laptop_0p5_20260923T041407Z_INC_ef2c294d7052bd84afa5d31c | EXPLOIT | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-1: e6_laptop_0p5_20260923T041407Z_INC_3e5a4b7ec675bc064ab4f32e | EXPLOIT | 192.168.10.101
+[+] LLM MEDIUM_PRE ACCEPTED | model=llama3.2:3b | grounding=85/100 | 84.706s
+[+] worker-3: e6_laptop_0p5_20260923T041407Z_INC_8a3a5b7995176107ef9ad150 | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-2: e6_laptop_0p5_20260923T041407Z_INC_0d05a8f19d498fd5f9603ad8 | EXPLOIT | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-1: e6_laptop_0p5_20260923T041407Z_INC_79fa38df1525be1874a434ba | EXPLOIT | 192.168.10.101
+[+] LLM MEDIUM_PRE ACCEPTED | model=llama3.2:3b | grounding=85/100 | 142.176s
+[+] worker-4: e6_laptop_0p5_20260923T041407Z_INC_c0c55fce83eae68e86b04715 | SUSPICIOUS_SCAN | 192.168.10.101
+
+[+] Dừng chương trình.

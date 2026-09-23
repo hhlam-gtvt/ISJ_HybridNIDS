@@ -1,0 +1,15 @@
+{
+  "tag": "1p0",
+  "archived_rate": "1.0",
+  "archived_provenance": "OLD_SMOKE_NOT_OFFICIAL_MEASUREMENT",
+  "input_sha256": "41c8ffd8fa3e48d836df42833e7d3d6c89a39e7133b58e9edb17ded51723cd27",
+  "total_documents": 2636,
+  "alert_flows": 2431,
+  "archive_ingress_span_s": 82.714,
+  "archive_ingress_basis": "source_queue_created_at is proxy for observed arrival",
+  "run_id": "laptop_1p0_20260923T041900Z",
+  "es_index": "e6-v552-laptop-1p0-20260923t041900z",
+  "start_utc": "2026-09-23T04:19:00.926+00:00",
+  "scope": "ISOLATED_LAPTOP_SOAR_REPLAY_NOT_NEW_NIDS_TRAFFIC",
+  "replay_speed": "archived queue-created wall-time offsets, 1:1"
+}

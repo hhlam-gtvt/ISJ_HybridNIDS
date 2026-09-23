@@ -1,0 +1,56 @@
+{
+  "study_type": "EXPLORATORY",
+  "estimand": "CHANGE_IN_QUEUE_ASSIGNMENT_WHEN_PROVENANCE_IS_VISIBLE",
+  "independent_test_sessions": 15,
+  "source_specific_rows": 30,
+  "primary_and_supplementary_are_paired": true,
+  "common_trigger": "S6",
+  "common_correlation_state": "S3_W60",
+  "correlation_window_seconds": 60,
+  "source_flags": {
+    "S1": "Suricata evidence",
+    "S2": "RF evidence"
+  },
+  "source_summaries": {
+    "primary": {
+      "distinct_sessions": 15,
+      "triggered": 15,
+      "correlated": 0,
+      "route_label_changed": 15,
+      "masked_routes": {
+        "UNCORRELATED_GENERAL_REVIEW": 15
+      },
+      "visible_routes": {
+        "RF_EVIDENCE_REVIEW": 15
+      }
+    },
+    "supplementary": {
+      "distinct_sessions": 15,
+      "triggered": 15,
+      "correlated": 6,
+      "route_label_changed": 9,
+      "masked_routes": {
+        "UNCORRELATED_GENERAL_REVIEW": 9,
+        "CORRELATED_REVIEW": 6
+      },
+      "visible_routes": {
+        "RF_EVIDENCE_REVIEW": 9,
+        "CORRELATED_REVIEW": 6
+      }
+    }
+  },
+  "production_rule_engine_invoked": false,
+  "production_hitl_observed": false,
+  "production_action_executed": false,
+  "limitations": [
+    "Policy defined after E3 Test results were inspected.",
+    "Route-label changes do not establish analyst utility.",
+    "The sample may lack some provenance/correlation combinations.",
+    "Primary and supplementary are not independent Test cohorts.",
+    "This is not a calibration or asset-context ablation."
+  ],
+  "input_sha256": {
+    "/home/lam/restore_soar/elk/experimental_results/e3/lam_integration/e3_routing_inputs.csv": "be0b5e6917fbe81be0b9be8b5fc9a31dea8c9c9a02cadabc68886480d8a80911",
+    "/home/lam/restore_soar/elk/experimental_results/e3/lam_integration/E3_E1_VERIFIED_CROSSWALK.csv": "c7263067dea9929da40df9e8cde6cdab9b431fb9b5c22433b04f02a2bf2a5fa1"
+  }
+}

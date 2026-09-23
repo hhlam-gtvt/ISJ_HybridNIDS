@@ -1,0 +1,187 @@
+{
+  "E3_primary": {
+    "provenance_counts": {
+      "rf_only": 15
+    },
+    "by_policy": {
+      "blind": {
+        "n": 15,
+        "containment_on_normal": 3,
+        "containment_on_scan": 3,
+        "high_impact_contained": 9,
+        "high_impact_total": 9,
+        "attacks_to_watchlist_or_monitor_only": 0,
+        "attacks_held": 0,
+        "held_total": 0,
+        "priority_queue_items": 15,
+        "items_reaching_person": 15,
+        "reference_agreement": 9
+      },
+      "aware": {
+        "n": 15,
+        "containment_on_normal": 0,
+        "containment_on_scan": 0,
+        "high_impact_contained": 0,
+        "high_impact_total": 9,
+        "attacks_to_watchlist_or_monitor_only": 12,
+        "attacks_held": 0,
+        "held_total": 0,
+        "priority_queue_items": 0,
+        "items_reaching_person": 15,
+        "reference_agreement": 6
+      },
+      "aware_drift": {
+        "n": 15,
+        "containment_on_normal": 0,
+        "containment_on_scan": 0,
+        "high_impact_contained": 0,
+        "high_impact_total": 9,
+        "attacks_to_watchlist_or_monitor_only": 0,
+        "attacks_held": 12,
+        "held_total": 15,
+        "priority_queue_items": 0,
+        "items_reaching_person": 15,
+        "reference_agreement": 6
+      },
+      "analyst": {
+        "n": 15,
+        "containment_on_normal": 0,
+        "containment_on_scan": 0,
+        "high_impact_contained": 0,
+        "high_impact_total": 9,
+        "attacks_to_watchlist_or_monitor_only": 0,
+        "attacks_held": 0,
+        "held_total": 0,
+        "priority_queue_items": 0,
+        "items_reaching_person": 15,
+        "reference_agreement": 6
+      }
+    }
+  },
+  "E3_supplementary": {
+    "provenance_counts": {
+      "correlated": 6,
+      "rf_only": 9
+    },
+    "by_policy": {
+      "blind": {
+        "n": 15,
+        "containment_on_normal": 3,
+        "containment_on_scan": 3,
+        "high_impact_contained": 9,
+        "high_impact_total": 9,
+        "attacks_to_watchlist_or_monitor_only": 0,
+        "attacks_held": 0,
+        "held_total": 0,
+        "priority_queue_items": 15,
+        "items_reaching_person": 15,
+        "reference_agreement": 9
+      },
+      "aware": {
+        "n": 15,
+        "containment_on_normal": 0,
+        "containment_on_scan": 0,
+        "high_impact_contained": 6,
+        "high_impact_total": 9,
+        "attacks_to_watchlist_or_monitor_only": 6,
+        "attacks_held": 0,
+        "held_total": 0,
+        "priority_queue_items": 6,
+        "items_reaching_person": 15,
+        "reference_agreement": 12
+      },
+      "aware_drift": {
+        "n": 15,
+        "containment_on_normal": 0,
+        "containment_on_scan": 0,
+        "high_impact_contained": 0,
+        "high_impact_total": 9,
+        "attacks_to_watchlist_or_monitor_only": 0,
+        "attacks_held": 12,
+        "held_total": 15,
+        "priority_queue_items": 0,
+        "items_reaching_person": 15,
+        "reference_agreement": 6
+      },
+      "analyst": {
+        "n": 15,
+        "containment_on_normal": 0,
+        "containment_on_scan": 0,
+        "high_impact_contained": 0,
+        "high_impact_total": 9,
+        "attacks_to_watchlist_or_monitor_only": 0,
+        "attacks_held": 0,
+        "held_total": 0,
+        "priority_queue_items": 0,
+        "items_reaching_person": 15,
+        "reference_agreement": 6
+      }
+    }
+  },
+  "E7_detector_side": {
+    "cycles": 89,
+    "provenance_counts": {
+      "correlated": 267,
+      "rf_only": 1068
+    },
+    "by_policy": {
+      "blind": {
+        "n": 1335,
+        "containment_on_normal": 267,
+        "containment_on_scan": 267,
+        "high_impact_contained": 801,
+        "high_impact_total": 801,
+        "attacks_to_watchlist_or_monitor_only": 0,
+        "attacks_held": 0,
+        "held_total": 0,
+        "priority_queue_items": 1335,
+        "items_reaching_person": 1335,
+        "reference_agreement": 801
+      },
+      "aware": {
+        "n": 1335,
+        "containment_on_normal": 0,
+        "containment_on_scan": 0,
+        "high_impact_contained": 267,
+        "high_impact_total": 801,
+        "attacks_to_watchlist_or_monitor_only": 801,
+        "attacks_held": 0,
+        "held_total": 0,
+        "priority_queue_items": 267,
+        "items_reaching_person": 1335,
+        "reference_agreement": 801
+      },
+      "aware_drift": {
+        "n": 1335,
+        "containment_on_normal": 0,
+        "containment_on_scan": 0,
+        "high_impact_contained": 0,
+        "high_impact_total": 801,
+        "attacks_to_watchlist_or_monitor_only": 0,
+        "attacks_held": 1068,
+        "held_total": 1335,
+        "priority_queue_items": 0,
+        "items_reaching_person": 1335,
+        "reference_agreement": 534
+      },
+      "analyst": {
+        "n": 1335,
+        "containment_on_normal": 0,
+        "containment_on_scan": 0,
+        "high_impact_contained": 0,
+        "high_impact_total": 801,
+        "attacks_to_watchlist_or_monitor_only": 0,
+        "attacks_held": 0,
+        "held_total": 0,
+        "priority_queue_items": 0,
+        "items_reaching_person": 1335,
+        "reference_agreement": 534
+      }
+    },
+    "sessions_with_route_change_across_cycles": 0,
+    "drift_alarm_minutes": [
+      1559,
+      1561
+    ]
+  }
+}

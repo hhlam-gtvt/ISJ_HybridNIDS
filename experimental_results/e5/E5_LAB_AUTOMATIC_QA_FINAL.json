@@ -1,0 +1,39 @@
+{
+  "generated_utc": "2026-09-19T18:02:00.858949+00:00",
+  "status": "AUTOMATIC_COMPONENT_DONE__ANALYST_STUDY_PENDING_REAL_RATINGS",
+  "scope": "30 distinct Test capture sessions; 1 Docker lab/Suricata source provenance, 4 scenarios",
+  "study_design_limitations": [
+    "A Test capture session is an incident candidate until evidence/incident eligibility is adjudicated.",
+    "Only one source provenance: this does not demonstrate multi-provenance stratification.",
+    "The selective rule was pilot-informed on the same 30-session cohort; this is not independent held-out confirmation.",
+    "The runner preserves an EXPLORATORY_LAB_ONLY_NOT_MAIN label; copying its output does not change that status.",
+    "The LLM runner uses temperature=0.2; its seed controls local order only and is not passed as a seed to Ollama.",
+    "No analyst utility, correctness or security impact can be inferred from schema validity."
+  ],
+  "distinct_cases": 30,
+  "model_output_rows": 210,
+  "mode_rows": {
+    "deterministic_only": 30,
+    "always_llm": 90,
+    "selective_llm": 90
+  },
+  "llm_calls_by_mode": {
+    "always_llm": 90,
+    "selective_llm": 42
+  },
+  "selective_rule": "Observed Suricata alert_count >= 50; 14 cases invoke LLM in each repetition",
+  "output_validation_counts": {
+    "SCHEMA_VALID_NOT_FACT_CHECKED": 192,
+    "INVALID_STRUCTURE": 9,
+    "INVALID_EVIDENCE_FIELD": 9
+  },
+  "file_sha256": {
+    "e5_model_outputs.jsonl": "8d087a5fffd51b43dfaaf229f4ca814653de869adda9d0f01c933a198f2540c8",
+    "e5_automatic_metrics.csv": "59ee11cc50055d82a28c925f593ef0f9d348520028540b09590c63bf758155ed",
+    "e5/E5_LAB_LOCKED_PROTOCOL_V1.json": "9948067d4786d9381b1c55a1303a668387f55b1ebcf6d4c82f13a6955d873063",
+    "e5/E5_LAB_LOCKED_BLIND_V1/OWNER_ONLY_MODE_CROSSWALK.csv": "f0ad96b787c77d60ba53260521a6634e9086de95a8a47d763d147d53dbe9fd05",
+    "e5/E5_LAB_REVIEWER_PACKETS_WITH_REFERENCES_V1/REFERENCE_30_CASES_FOR_BOTH_REVIEWERS.csv": "954f05b32971781913e2c7b2e7001968fa40d61bc208e735246aadb73fd50081"
+  },
+  "reviewers_scored": 0,
+  "note": "This audit does NOT assert rubric agreement, independent reviewer approval, multi-provenance coverage, or E5 completion."
+}

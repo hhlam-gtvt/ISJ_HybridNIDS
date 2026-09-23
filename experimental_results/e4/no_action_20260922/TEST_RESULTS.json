@@ -1,0 +1,37 @@
+{
+  "test": "E4 integrated NORMAL -> NO_ACTION",
+  "captured_at_utc": "2026-09-22T02:49:13.524246+00:00",
+  "environment": "Laptop WSL2; isolated E4 Elasticsearch index and SQLite DB",
+  "index": "e4-laptop-no-action-run01",
+  "api_port": 5053,
+  "firewall_mode": "DRY_RUN",
+  "source": "Three confirmed normal incidents from E1 Test, replayed",
+  "queue_rows": [
+    {
+      "es_id": "EVT_TEST_NORMAL_01_001",
+      "status": "NO_ACTION",
+      "retry_count": 0,
+      "last_error": null
+    },
+    {
+      "es_id": "EVT_TEST_NORMAL_02_001",
+      "status": "NO_ACTION",
+      "retry_count": 0,
+      "last_error": null
+    },
+    {
+      "es_id": "EVT_TEST_NORMAL_03_001",
+      "status": "NO_ACTION",
+      "retry_count": 0,
+      "last_error": null
+    }
+  ],
+  "alert_count": 0,
+  "blocked_ip_count": 0,
+  "contract_result": "PASS",
+  "limitations": [
+    "Historical E1 incidents replayed; not newly captured NIDS traffic.",
+    "Firewall configured in DRY_RUN mode.",
+    "This run tests the NORMAL contract, not DoS/brute-force frequency."
+  ]
+}

@@ -1,0 +1,50 @@
+[+] Static RAG: knowledge_base.json | version=1.1.0 | method=EXACT_CATEGORY_MATCH
+================================================================
+E6 INSTRUMENTED RESPONSE PIPELINE
+Trace output: /root/elk/experimental_results/E6_2R_LAPTOP_MEASURED/1p0_20260923T041900Z/e6_response_trace.csv
+Run ID: laptop_1p0_20260923T041900Z
+Rate: 1.0
+Rep: 0
+ES index: e6-v552-laptop-1p0-20260923t041900z
+DB: /root/elk/experimental_results/E6_2R_LAPTOP_MEASURED/1p0_20260923T041900Z/e6_response_lam.db
+FIREWALL=DRY_RUN; TG=DISABLED; no namespace/tcpreplay
+================================================================
+[RECOVERY] Không có incident bị kẹt EXECUTING.
+================================================================
+SOAR ORCHESTRATOR 8.0 FINAL - POST-BLOCK LLM ADVISORY FOR ADMIN
+ES: http://localhost:9200/e6-v552-laptop-1p0-20260923t041900z
+Workers: 4
+Ollama: http://127.0.0.1:11434 | model=llama3.2:3b
+Static RAG: knowledge_base.json | exact match | no vector DB
+Whitelist: IP/CIDR | dual gate | FAIL-CLOSED
+Firewall: DRY-RUN
+API auth: LOCAL LAB BYPASS
+================================================================
+[!] Telegram tắt vì chưa cấu hình TG_TOKEN/TG_CHAT_ID.
+[+] API LAB: localhost được phép thao tác không cần API key.
+[+] API: http://127.0.0.1:5507
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 NORMAL QUARANTINE] e6_laptop_1p0_20260923T041900Z_INC_1599c6729da41ac16fc940fe member_count=25 queue ACK only; manual label review required
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 NORMAL QUARANTINE] e6_laptop_1p0_20260923T041900Z_INC_8dc2b90dbf19efbaad65e1c9 member_count=25 queue ACK only; manual label review required
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 NORMAL QUARANTINE] e6_laptop_1p0_20260923T041900Z_INC_aeb207cc0e28337b040fd20a member_count=25 queue ACK only; manual label review required
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-4: e6_laptop_1p0_20260923T041900Z_INC_365a1d8cb374f624e7c7a3f2 | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-1: e6_laptop_1p0_20260923T041900Z_INC_bde3762619f728f1be993907 | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] LLM MEDIUM_PRE ACCEPTED | model=llama3.2:3b | grounding=85/100 | 44.514s
+[+] worker-2: e6_laptop_1p0_20260923T041900Z_INC_58f06f6f6d449dfefd2d50d5 | SUSPICIOUS_SCAN | 192.168.10.101
+[+] LLM MEDIUM_PRE ACCEPTED | model=llama3.2:3b | grounding=85/100 | 61.067s
+[+] worker-3: e6_laptop_1p0_20260923T041900Z_INC_cd075a4294b1b2c8ac5c85f3 | SUSPICIOUS_SCAN | 192.168.10.101
+
+[+] Dừng chương trình.

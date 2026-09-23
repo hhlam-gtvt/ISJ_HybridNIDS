@@ -1,0 +1,21 @@
+E4 FINAL ACCEPTANCE: PASS
+
+E1 confirmed Test incidents: 15
+Integrated immutable E1 baseline incidents: 9
+
+Baseline outcomes: 9/9
+Phase B: 6/6
+Phase C: 11/11
+Phase D crash/restart: 18/18
+Phase E firewall lifecycle: 6/6
+
+Total consolidated outcome rows: 50
+Failure/recovery rows: 34
+RQ3 comparison rows: 30
+
+Duplicate external effects: 0
+Residual E4 firewall rules: 0
+
+Primary limitation:
+Original E1 DoS/Brute-Force operational frequency was not retained;
+no frequency value was reconstructed or fabricated.

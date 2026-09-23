@@ -1,0 +1,37 @@
+rate,stage,n_events,p50_ms,p95_ms,p99_ms,mean_ms,clock,measurement_scope,completion_ratio,note
+0.5x,feature_extraction,522,0.04,0.067,0.107,0.044,perf_counter,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,rf_predict,522,21.853,32.54,34.817,22.729,perf_counter,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,detector_output_to_normalize,200,0.001,0.001,0.001,0.001,UTC,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,nids_normalization,522,0.017,0.024,0.029,0.017,UTC,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,es_indexing,522,4.267,53.212,61.638,20.695,UTC,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,es_confirmed_to_queue,522,1107.97,1877.007,2072.704,1099.875,UTC,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,response_normalization,522,0.038,0.065,0.09,0.042,UTC,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,policy_eval,522,0.009,0.015,0.02,0.01,UTC,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,llm_wait,522,9130.866,15060.773,16585.719,8452.839,UTC,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,execution,0,NA,NA,NA,NA,UTC,COMPLETED_EVENTS_ONLY,0.0204,NA_DRY_RUN
+0.5x,audit_completion,522,17882.269,24489.613,30616.788,17139.165,UTC,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+0.5x,e2e_flow_to_audit,522,115761.216,280708.049,298112.072,124993.327,UTC,COMPLETED_EVENTS_ONLY,0.0204,latency from completed events only
+1.0x,feature_extraction,401,0.039,0.057,0.116,0.042,perf_counter,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,rf_predict,401,21.796,32.344,34.99,22.446,perf_counter,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,detector_output_to_normalize,192,0.001,0.001,0.001,0.001,UTC,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,nids_normalization,401,0.017,0.024,0.028,0.017,UTC,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,es_indexing,401,3.976,52.461,64.427,17.474,UTC,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,es_confirmed_to_queue,401,1128.606,1819.311,2092.263,1111.706,UTC,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,response_normalization,401,0.039,0.063,0.096,0.043,UTC,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,policy_eval,401,0.01,0.016,0.018,0.011,UTC,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,llm_wait,401,9117.374,10257.024,17435.155,8452.2,UTC,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,execution,0,NA,NA,NA,NA,UTC,COMPLETED_EVENTS_ONLY,0.0217,NA_DRY_RUN
+1.0x,audit_completion,401,17962.99,25082.217,30867.784,17328.906,UTC,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+1.0x,e2e_flow_to_audit,401,143456.438,275793.235,288974.491,137296.975,UTC,COMPLETED_EVENTS_ONLY,0.0217,latency from completed events only
+2.0x,feature_extraction,349,0.034,0.06,0.133,0.04,perf_counter,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,rf_predict,349,21.7,32.15,34.496,22.397,perf_counter,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,detector_output_to_normalize,134,0.001,0.001,0.001,0.001,UTC,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,nids_normalization,349,0.017,0.024,0.028,0.018,UTC,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,es_indexing,349,3.634,51.235,70.283,15.27,UTC,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,es_confirmed_to_queue,349,1071.773,1821.48,1879.278,1188.573,UTC,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,response_normalization,349,0.037,0.054,0.102,0.04,UTC,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,policy_eval,349,0.009,0.015,0.017,0.01,UTC,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,llm_wait,349,8848.111,15288.535,16128.744,8099.729,UTC,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,execution,0,NA,NA,NA,NA,UTC,COMPLETED_EVENTS_ONLY,0.8116,NA_DRY_RUN
+2.0x,audit_completion,349,17555.156,24464.001,25294.254,16838.312,UTC,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only
+2.0x,e2e_flow_to_audit,349,129167.983,263971.017,274479.11,134587.25,UTC,COMPLETED_EVENTS_ONLY,0.8116,latency from completed events only

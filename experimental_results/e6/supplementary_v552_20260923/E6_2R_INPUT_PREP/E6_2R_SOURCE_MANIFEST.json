@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-09-23T01:27:36.511400+00:00",
+  "scope": "E6 input preparation only; no v552 measurement performed",
+  "rates": {
+    "0p5": {
+      "source_run_id": "e6_live_0p5_r0_20260920T024325Z",
+      "source_database": "/home/lam/restore_soar/elk/e6_integration/results/e6_live_0p5_r0_20260920T024325Z/e6_response_lam.db",
+      "source_provenance": "MEASURED_OLD_RUN",
+      "rate_in_payload": "0.5",
+      "exported_rows": 4577,
+      "event_counts": {
+        "total": 4577,
+        "kind:alert": 4577,
+        "category:Normal": 74,
+        "category:PortScan": 2355,
+        "category:Exploits": 2148
+      },
+      "sessions": {
+        "E1_TEST_NORMAL_01": 25,
+        "E1_TEST_NORMAL_02": 24,
+        "E1_TEST_NORMAL_03": 25,
+        "E1_TEST_SCAN_01": 781,
+        "E1_TEST_SCAN_02": 772,
+        "E1_TEST_SCAN_03": 802,
+        "E1_TEST_EXPLOIT_01": 1183,
+        "E1_TEST_EXPLOIT_02": 965
+      },
+      "export_file": "/home/lam/restore_soar/elk/experimental_results/E6_2R_INPUT_PREP/e6_input_0p5.jsonl",
+      "export_sha256": "04820d36af3691482dfa92806a2eb5ae70b82e483b2f096732e8c18ad8c161fb",
+      "v552_postfix_measurement": "NOT_RUN"
+    },
+    "1p0": {
+      "source_run_id": "e6_smoke_20260920T022308Z",
+      "source_database": "/home/lam/restore_soar/elk/e6_integration/results/e6_smoke_20260920T022308Z/e6_response_lam.db",
+      "source_provenance": "OLD_SMOKE_NOT_OFFICIAL_MEASUREMENT",
+      "rate_in_payload": "1.0",
+      "exported_rows": 2636,
+      "event_counts": {
+        "total": 2636,
+        "kind:event": 205,
+        "category:Normal": 93,
+        "kind:alert": 2431,
+        "category:PortScan": 2543
+      },
+      "sessions": {
+        "E1_TEST_NORMAL_01": 31,
+        "E1_TEST_NORMAL_02": 31,
+        "E1_TEST_NORMAL_03": 31,
+        "E1_TEST_SCAN_01": 845,
+        "E1_TEST_SCAN_02": 837,
+        "E1_TEST_SCAN_03": 861
+      },
+      "export_file": "/home/lam/restore_soar/elk/experimental_results/E6_2R_INPUT_PREP/e6_input_1p0.jsonl",
+      "export_sha256": "41c8ffd8fa3e48d836df42833e7d3d6c89a39e7133b58e9edb17ded51723cd27",
+      "v552_postfix_measurement": "NOT_RUN"
+    }
+  }
+}

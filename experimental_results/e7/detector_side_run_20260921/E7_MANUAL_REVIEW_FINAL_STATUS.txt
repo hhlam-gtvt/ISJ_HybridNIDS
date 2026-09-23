@@ -1,0 +1,35 @@
+E7 v1.5 MANUAL REVIEW FINAL STATUS
+
+Review scope:
+  Ten post-run samples selected from the deterministic E7 sampling ledger.
+  The review evaluates evidence/provenance consistency for each recorded
+  provenance tier. It does not establish detector correctness relative to
+  fresh ground truth.
+
+Reviewer:
+  Tang Quoc Cuong
+
+Completed outcomes:
+  ACCEPTED          9
+  PARTIAL_ACCEPTED  1
+  REJECTED          0
+
+Special case:
+  E7S0003 is PARTIAL_ACCEPTED because its replay ledger records
+  23,666 sent packets out of 23,669 offered packets, with 3 failed packets.
+  The incident identity and provenance tier remain traceable, but the replay
+  is incomplete.
+
+Definition status:
+  PARTIAL_ACCEPTED is defined in a retrospective post-run documentation
+  amendment. It was not preregistered before the E7 v1.5 run and must not be
+  represented as a historically frozen decision rule.
+
+Manual-review requirement:
+  COMPLETE AS POST-RUN SUPPLEMENTARY VALIDATION.
+
+Remaining E7 limitation:
+  The v1.5 workload repeatedly replayed stored E1 Test PCAPs. It is not a
+  newly collected 24-48 hour traffic corpus with fresh ground truth.
+  Therefore the primary "new traffic with ground truth" E7 requirement
+  remains NOT SATISFIED by this run.

@@ -1,0 +1,212 @@
+{
+  "document": "E2_MODEL_LINEAGE",
+  "version": "1.0",
+  "frozen_utc": "2026-09-19T09:30:00+00:00",
+  "description": "Complete lineage mapping: variant -> model -> seed -> feature set -> calibrator -> threshold -> data partition.",
+  "source_model": {
+    "file": "models/rf21_schema_gap/nids_rf21_schema_gap_pipeline.pkl",
+    "sha256": "e3acec66c2e54733765b93e6e4e2b6634a0eca0de7c6ecef30acd4c5f2fea035",
+    "training_data": "UNSW-NB15 compatible flow records",
+    "training_samples": 2030129,
+    "features": 21,
+    "feature_set": "RF-21 (dur, sbytes, dbytes, sload, dload, spkts, dpkts, smean, dmean, sjit, djit, sinpkt, dinpkt, tcprtt, is_sm_ips_ports, ct_state_ttl, ct_srv_src, ct_dst_ltm, ct_src_dport_ltm, ct_dst_sport_ltm, ct_dst_src_ltm)",
+    "task": "Binary classification: Normal (0) vs Attack (1)",
+    "original_threshold": 0.8528152217872779,
+    "note": "External reference — not included in submission package. This is the pre-trained UNSW-NB15 model used as starting point for V1/V2 variants."
+  },
+  "variants": {
+    "V1_source_direct": {
+      "description": "Source RF-21 with original threshold, raw proba[:,1]",
+      "model_sha256": "e3acec66c2e54733765b93e6e4e2b6634a0eca0de7c6ecef30acd4c5f2fea035",
+      "seed": "N/A",
+      "features": "RF-21 (21)",
+      "calibrator": "none",
+      "score_transform": "raw proba[:,1]",
+      "threshold": 0.8528152217872779,
+      "threshold_selected_on": "N/A (inherited from source)",
+      "trained_on": "UNSW-NB15 (external)"
+    },
+    "V1_inverted": {
+      "description": "Source RF-21 with inverted score: 1 - proba[:,1]",
+      "model_sha256": "e3acec66c2e54733765b93e6e4e2b6634a0eca0de7c6ecef30acd4c5f2fea035",
+      "seed": "N/A",
+      "features": "RF-21 (21)",
+      "calibrator": "none",
+      "score_transform": "1 - proba[:,1]",
+      "threshold": 0.05,
+      "threshold_selected_on": "DEV_CAL",
+      "trained_on": "UNSW-NB15 (external)"
+    },
+    "V2a_platt_devcal": {
+      "description": "Platt scaling on V1_inverted scores",
+      "model_sha256": "e3acec66c2e54733765b93e6e4e2b6634a0eca0de7c6ecef30acd4c5f2fea035",
+      "seed": "N/A",
+      "features": "RF-21 (21)",
+      "calibrator": "Platt (LogisticRegression)",
+      "calibrator_file": "e2_artifacts/calibrators/V2a_platt.pkl",
+      "calibrator_sha256": "c9ed9acb6c2530f19c3ff4ce451eff98431982876065be8b76e0c2d14b0472e6",
+      "calibrator_fit_on": "DEV_CAL",
+      "calibrator_params": {
+        "slope": 3.586908,
+        "intercept": 5.770532
+      },
+      "score_transform": "Platt(1 - proba[:,1])",
+      "threshold": 0.05,
+      "threshold_selected_on": "DEV_CAL",
+      "trained_on": "UNSW-NB15 (external) + calibrator on DEV_CAL"
+    },
+    "V2b_isotonic_devcal": {
+      "description": "Isotonic regression on V1_inverted scores",
+      "model_sha256": "e3acec66c2e54733765b93e6e4e2b6634a0eca0de7c6ecef30acd4c5f2fea035",
+      "seed": "N/A",
+      "features": "RF-21 (21)",
+      "calibrator": "Isotonic regression",
+      "calibrator_file": "e2_artifacts/calibrators/V2b_isotonic.pkl",
+      "calibrator_sha256": "5df8f58b80b797594e749f856cc7df995ffce0301a1f0fb455c8fcc8e5729b56",
+      "calibrator_fit_on": "DEV_CAL",
+      "calibrator_params": {
+        "n_breakpoints": 6,
+        "x_min": 0.068178,
+        "x_max": 0.669458
+      },
+      "score_transform": "Isotonic(1 - proba[:,1])",
+      "threshold": 0.05,
+      "threshold_selected_on": "DEV_CAL",
+      "trained_on": "UNSW-NB15 (external) + calibrator on DEV_CAL"
+    },
+    "V3_RF21": {
+      "description": "Retrained RF on DEV_TRAIN with 21 features, multi-seed",
+      "model_files": {
+        "seed_7": {
+          "file": "models/V3_seed7.pkl",
+          "sha256": "d8fd8ad5b2c588844b95dc3ee2828e5cf111cb774bd069d40da5b55cabd6d0b5",
+          "threshold_cal": 0.09
+        },
+        "seed_21": {
+          "file": "models/V3_seed21.pkl",
+          "sha256": "baae99c3fb06b65686c216e4e6b4d87d452984bdb895dff1cbe568f379259c9f",
+          "threshold_cal": 0.05
+        },
+        "seed_42": {
+          "file": "models/V3_seed42.pkl",
+          "sha256": "2ffff7baebe6bcaaa1396d880fdc615c457e10320a02f409d6c37ab78edb86e1",
+          "threshold_cal": 0.05
+        },
+        "seed_101": {
+          "file": "models/V3_seed101.pkl",
+          "sha256": "742e88ccab91427dceab85bc2b51ef2b27ccd5098eb98d1c3d1310d190125141",
+          "threshold_cal": 0.05
+        },
+        "seed_2026": {
+          "file": "models/V3_seed2026.pkl",
+          "sha256": "ea7b9407c81fd2e5162224f5734721a7123594a85f381d0e949e4a637267c2b4",
+          "threshold_cal": 0.05
+        }
+      },
+      "canonical_seed": 42,
+      "features": "RF-21 (21)",
+      "calibrator": "none",
+      "threshold": 0.05,
+      "threshold_selected_on": "DEV_CAL",
+      "trained_on": "DEV_TRAIN (10 sessions)"
+    },
+    "V4_noTTL": {
+      "description": "Retrained RF on DEV_TRAIN with 20 features (minus ct_state_ttl)",
+      "model_files": {
+        "seed_7": {
+          "file": "models/V4_seed7.pkl",
+          "sha256": "63ec23fdd3a2740e587611a35057a5d38e7757089368ffd41c76159de1c254c2",
+          "threshold_cal": 0.05
+        },
+        "seed_21": {
+          "file": "models/V4_seed21.pkl",
+          "sha256": "664e7f57465a43302f65dd45172e367dfb2bd51fadc3b7525a7c30c3cc78573c",
+          "threshold_cal": 0.05
+        },
+        "seed_42": {
+          "file": "models/V4_seed42.pkl",
+          "sha256": "dd03a9e445231f3979712ffe0dc37b082e9402cacdcd9a26ccacc8bbe53f7473",
+          "threshold_cal": 0.05
+        },
+        "seed_101": {
+          "file": "models/V4_seed101.pkl",
+          "sha256": "e0fa718623e82a514e022d66d66eca4125627f7c1d43f21baaf60631c1f0262a",
+          "threshold_cal": 0.05
+        },
+        "seed_2026": {
+          "file": "models/V4_seed2026.pkl",
+          "sha256": "1b21a5ae4b6ffc5d382a18cbe5218e869b540f5b37d6ca6b8f4ad7cd4c81055c",
+          "threshold_cal": 0.05
+        }
+      },
+      "canonical_seed": 42,
+      "features": "RF-20 (RF-21 minus ct_state_ttl)",
+      "calibrator": "none",
+      "threshold": 0.05,
+      "threshold_selected_on": "DEV_CAL",
+      "trained_on": "DEV_TRAIN (10 sessions)"
+    }
+  },
+  "data_partitions": {
+    "DEV_TRAIN": {
+      "sessions": [
+        "E1_DEV_NORMAL_01",
+        "E1_DEV_NORMAL_02",
+        "E1_DEV_SCAN_01",
+        "E1_DEV_SCAN_02",
+        "E1_DEV_BRUTE_01",
+        "E1_DEV_BRUTE_02",
+        "E1_DEV_DOS_01",
+        "E1_DEV_DOS_02",
+        "E1_DEV_EXPLOIT_01b",
+        "E1_DEV_EXPLOIT_02"
+      ],
+      "count": 10,
+      "flows": 137572,
+      "role": "Model fitting (V3, V4)"
+    },
+    "DEV_CAL": {
+      "sessions": [
+        "E1_DEV_NORMAL_03",
+        "E1_DEV_SCAN_03",
+        "E1_DEV_BRUTE_03",
+        "E1_DEV_DOS_03",
+        "E1_DEV_EXPLOIT_03b"
+      ],
+      "count": 5,
+      "flows": 66654,
+      "role": "Calibrator fitting (V2a, V2b) + threshold selection (all)"
+    },
+    "TEST": {
+      "sessions": [
+        "E1_TEST_NORMAL_01",
+        "E1_TEST_NORMAL_02",
+        "E1_TEST_NORMAL_03",
+        "E1_TEST_SCAN_01",
+        "E1_TEST_SCAN_02",
+        "E1_TEST_SCAN_03",
+        "E1_TEST_BRUTE_01",
+        "E1_TEST_BRUTE_02",
+        "E1_TEST_BRUTE_03",
+        "E1_TEST_DOS_01",
+        "E1_TEST_DOS_02",
+        "E1_TEST_DOS_03",
+        "E1_TEST_EXPLOIT_01",
+        "E1_TEST_EXPLOIT_02",
+        "E1_TEST_EXPLOIT_03"
+      ],
+      "count": 15,
+      "flows": 203677,
+      "role": "Retrospective frozen re-evaluation only"
+    },
+    "EXCLUDED": {
+      "sessions": [
+        "E1_DEV_EXPLOIT_01",
+        "E1_DEV_EXPLOIT_03"
+      ],
+      "count": 2,
+      "reason": "Aborted runs"
+    }
+  },
+  "test_disclosure": "Test examined during v1.0-v1.2. v2.1 thresholds from DEV_CAL only. Test results = retrospective frozen re-evaluation, not unseen confirmatory hold-out."
+}

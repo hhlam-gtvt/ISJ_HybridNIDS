@@ -1,0 +1,11 @@
+E7 LARGE ARTIFACT RETENTION METADATA
+Generated: 2026-09-22T20:19:22+07:00
+
+/home/ezycloudx-admin/soc_transfer/admin_soc/hybrid-nids/experimental_results/e7/runs/E7_CUONG_FULL_20260921T101315Z/drift_stderr.log | size=287223567840 | mtime=2026-09-22 19:13:18.004252884 +0700
+/home/ezycloudx-admin/soc_transfer/admin_soc/hybrid-nids/experimental_results/e7/runs/E7_CUONG_FULL_20260921T101315Z/pcap/e7_full_20260921T101331Z.pcap | size=53160920696 | mtime=2026-09-22 19:10:47.553489317 +0700
+/home/ezycloudx-admin/soc_transfer/admin_soc/hybrid-nids/experimental_results/e7/runs/E7_CUONG_FULL_20260921T101315Z/suricata/eve.json | size=221945252801 | mtime=2026-09-22 19:13:48.488207437 +0700
+
+drift_stderr.log is diagnostic warning output, not a primary scientific
+measurement artifact. If removed for storage recovery, preserve bounded
+head/tail samples and this metadata note; do not claim a full-file hash
+unless one was actually computed.

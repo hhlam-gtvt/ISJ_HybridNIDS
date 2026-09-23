@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-09-23T04:19:00.126+00:00",
+  "snapshot": {
+    "db_ready": true,
+    "flow_members": 4577,
+    "incident_groups": 13,
+    "group_states": {
+      "QUEUED": 13
+    },
+    "queue_status": {
+      "DONE": 13
+    },
+    "queue_incomplete": 0,
+    "queue_dead": 0,
+    "queue_done": 13
+  },
+  "incomplete_reason": "",
+  "note": "Queue DONE is NOT final HITL approval/containment; HIGH_POST might be asynchronous"
+}

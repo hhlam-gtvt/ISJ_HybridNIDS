@@ -1,0 +1,35 @@
+{
+  "frozen_utc": "2026-09-19T02:51:54.476819+00:00",
+  "dev_train": [
+    "E1_DEV_NORMAL_01",
+    "E1_DEV_NORMAL_02",
+    "E1_DEV_SCAN_01",
+    "E1_DEV_SCAN_02",
+    "E1_DEV_BRUTE_01",
+    "E1_DEV_BRUTE_02",
+    "E1_DEV_DOS_01",
+    "E1_DEV_DOS_02",
+    "E1_DEV_EXPLOIT_01b",
+    "E1_DEV_EXPLOIT_02"
+  ],
+  "dev_cal": [
+    "E1_DEV_NORMAL_03",
+    "E1_DEV_SCAN_03",
+    "E1_DEV_BRUTE_03",
+    "E1_DEV_DOS_03",
+    "E1_DEV_EXPLOIT_03b"
+  ],
+  "excluded": [
+    "E1_DEV_EXPLOIT_01",
+    "E1_DEV_EXPLOIT_03"
+  ],
+  "seeds": [
+    7,
+    21,
+    42,
+    101,
+    2026
+  ],
+  "threshold_criterion": "F1_maximization_on_DEV_CAL",
+  "note": "The v2.1 split was frozen before v2.1 retraining, calibration, threshold selection, and the final frozen Test re-evaluation. The Test set had been examined during earlier v1.0-v1.2 development iterations."
+}

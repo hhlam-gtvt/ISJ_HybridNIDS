@@ -1,0 +1,46 @@
+{
+  "study": "E5 selective LLM and analyst study",
+  "scope": "LAB_SURICATA_ONLY",
+  "locked_utc": "2026-09-19T17:46:19.786898+00:00",
+  "decision": "Proceed under study owner's direction without awaiting advisor approval",
+  "cohort_size": 30,
+  "unit": "distinct E1 Test capture session; incident-level review remains required",
+  "scenario_counts": {
+    "brute": 7,
+    "dos": 7,
+    "exploit": 7,
+    "scan": 9
+  },
+  "data_source_provenance": {
+    "E1_local_Docker_lab": 30
+  },
+  "provenance_limitation": "One data-source provenance; no multi-provenance claim",
+  "pilot_limitation": "Same cohort was used during exploration; selective rule is pilot-informed, not independently validated",
+  "observed_input_sha256": "ff50525a779a901e044a3f6684bb7c31a72d05c46cbca26c526276f2017dc1e8",
+  "staging_sha256": "f4645445515b859e635da79f006c92113b6be99625fcbab46be26ad977525088",
+  "runner_sha256": "d222213bfd25fb2e6da5c495cb93849f37df307a28651bdb8fb46bd350f84343",
+  "exploratory_output_sha256": "019608fc9a38a758308f3a015016aa8fd7c760c106912f076debf5d9949601a6",
+  "modes": [
+    "deterministic_only",
+    "always_llm",
+    "selective_llm"
+  ],
+  "repetitions": {
+    "deterministic_only": 1,
+    "always_llm": 3,
+    "selective_llm": 3
+  },
+  "selective_rule": {
+    "input": "observed Suricata alert_count only",
+    "invoke_llm_when_alert_count_at_least": 50
+  },
+  "llm": {
+    "model": "llama3.2:3b",
+    "temperature": 0.2,
+    "seed": 20260919
+  },
+  "ground_truth_in_model_prompt": false,
+  "reviewers_required": 2,
+  "blinded_main_ratings_received": 0,
+  "status": "LOCKED_BEFORE_NEW_LAB_RUN_NOT_FULL_E3_PROVENANCE_REPLICATION"
+}

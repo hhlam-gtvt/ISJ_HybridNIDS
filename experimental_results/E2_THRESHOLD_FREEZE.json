@@ -1,0 +1,12 @@
+{
+  "thresholds": {
+    "V1_source_direct": 0.8528152217872779,
+    "V1_inverted": 0.05,
+    "V2a_platt_devcal": 0.05,
+    "V2b_isotonic_devcal": 0.05,
+    "V3_RF21_seed42": 0.05,
+    "V4_noTTL_seed42": 0.05
+  },
+  "criterion": "F1_maximization_on_DEV_CAL",
+  "frozen_utc": "2026-09-19T03:14:24.159223+00:00"
+}

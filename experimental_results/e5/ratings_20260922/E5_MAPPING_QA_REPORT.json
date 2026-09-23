@@ -1,0 +1,27 @@
+{
+  "mapping_rows": 30,
+  "model_output_rows": 210,
+  "metric_rows": 210,
+  "mode_counts": {
+    "deterministic_only": 30,
+    "always_llm": 90,
+    "selective_llm": 90
+  },
+  "cohort": "E1 Test",
+  "original_sha256": {
+    "/home/lam/restore_soar/elk/experimental_results/e5_model_outputs.jsonl": "8d087a5fffd51b43dfaaf229f4ca814653de869adda9d0f01c933a198f2540c8",
+    "/home/lam/restore_soar/elk/experimental_results/e5_automatic_metrics.csv": "59ee11cc50055d82a28c925f593ef0f9d348520028540b09590c63bf758155ed"
+  },
+  "corrected_sha256": {
+    "/home/lam/restore_soar/elk/experimental_results/e5/E5_E1_TEST_CORRECTED/E5_LAB_TO_E1_TEST_SESSION_MAPPING.csv": "a39e37cb626926fe9cf663c584954511a9f19d46a068d52bbc76aa74d0205f78",
+    "/home/lam/restore_soar/elk/experimental_results/e5/E5_E1_TEST_CORRECTED/e5_model_outputs_E1_TEST.jsonl": "120077f67b65fb30381fe5583ed409eec59240fbb92ff1a81020e28174c10837",
+    "/home/lam/restore_soar/elk/experimental_results/e5/E5_E1_TEST_CORRECTED/e5_automatic_metrics_E1_TEST.csv": "cb08495062330e01e4d50461a43d15c381d89c271dc0e733029d948892cbc9d0"
+  },
+  "independent_review_status": {
+    "PENDING_HUMAN_VERIFICATION": 30
+  },
+  "main_protocol_approval_status": {
+    "False": 30
+  },
+  "note": "Mapping and E1 Test cohort labeling verified against E5 private crosswalk and staging metadata. Physical source artifact hashes and independent incident sign-off are not newly verified by this script."
+}
