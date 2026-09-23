@@ -1,0 +1,21 @@
+name: reproduce
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install pinned packages
+        run: pip install -r requirements.txt
+      - name: Check file digests
+        run: sha256sum -c --quiet SHA256SUMS.txt
+      - name: Regenerate tables and compare with tracked outputs
+        run: python3 analysis/verify_reproduction.py

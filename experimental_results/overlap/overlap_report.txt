@@ -1,0 +1,44 @@
+ISJ_manuscript_submitted_2026-09-23.pdf: 16167 distinct 8-word shingles
+  overlap with arXiv2609.24393_VNICT2026.pdf: 32 (0.20%)
+  overlap with arXiv2609.26316_FAIR2026.pdf: 40 (0.25%)
+union overlap: 40 (0.25%)
+    1 ho chi minh city college of transport
+    3 faculty of computer science and engineering ho
+    4 vietnam national university ho chi minh city
+    a validator a guardrail and an output sanitizer
+    academy of cryptography techniques ho chi minh city
+    acknowledges the support of ho chi minh city
+    added more than half a minute per alert
+    and engineering ho chi minh city university of
+    campus vietnam 3 faculty of computer science and
+    chi minh city campus vietnam 3 faculty of
+    chi minh city college of transport ho chi
+    chi minh city university of technology hcmut vnu
+    chi minh city vietnam 4 vietnam national university
+    city campus vietnam 3 faculty of computer science
+    city college of transport ho chi minh city
+    city university of technology hcmut vnu hcm for
+    city vietnam 4 vietnam national university ho chi
+    college of transport ho chi minh city vietnam
+    computer science and engineering ho chi minh city
+    cryptography techniques ho chi minh city campus vietnam
+    engineering ho chi minh city university of technology
+    faculty of computer science and engineering ho chi
+    ho chi minh city campus vietnam 3 faculty
+    ho chi minh city college of transport ho
+    ho chi minh city university of technology hcmut
+    ho chi minh city vietnam 4 vietnam national
+    minh city campus vietnam 3 faculty of computer
+    minh city college of transport ho chi minh
+    minh city university of technology hcmut vnu hcm
+    minh city vietnam 4 vietnam national university ho
+    of computer science and engineering ho chi minh
+    of cryptography techniques ho chi minh city campus
+    of ho chi minh city university of technology
+    phanvantri actvn edu vn nakhuong hcmut edu vn
+    science and engineering ho chi minh city university
+    support of ho chi minh city university of
+    techniques ho chi minh city campus vietnam 3
+    the support of ho chi minh city university
+    vietnam 3 faculty of computer science and engineering
+    vietnam 4 vietnam national university ho chi minh

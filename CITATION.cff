@@ -11,6 +11,9 @@ authors:
   - family-names: "Nguyen"
     given-names: "An Khuong"
 repository-code: "https://github.com/hhlam-gtvt/ISJ_HybridNIDS"
+version: "isj-submission-v1.0"
+date-released: "2026-09-24"
+license: MIT
 preferred-citation:
   type: article
   title: "Provenance-Aware Post-Alert Routing for Hybrid Network Intrusion Detection under Domain Shift: A Checked Policy and a Laboratory Evaluation"

@@ -1,0 +1,2 @@
+0p5_20260923T041407Z incidents=13 flows=4577 done=13 quarantined_normal=3 model_calls=3 call_s=[69.2, 93.6, 156.6] last_done_after_last_insert_s=12.1
+1p0_20260923T041900Z incidents=7 flows=2431 done=7 quarantined_normal=3 model_calls=2 call_s=[50.2, 66.7] last_done_after_last_insert_s=67.1

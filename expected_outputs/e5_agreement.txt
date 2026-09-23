@@ -1,0 +1,14 @@
+outputs=210 incidents=30
+factual_correctness_1_5: kappa=-0.018 CI=[-0.088,0.051] exact=0.214 mean_R1=3.77 mean_R2=3.04
+evidence_traceability_1_5: kappa=0.023 CI=[-0.062,0.106] exact=0.233 mean_R1=3.54 mean_R2=2.91
+actionability_1_5: kappa=-0.016 CI=[-0.084,0.051] exact=0.214 mean_R1=3.73 mean_R2=2.99
+workload_1_5_lower_better: kappa=0.043 CI=[-0.051,0.132] exact=0.252 mean_R1=2.82 mean_R2=2.80
+R1 factual_correctness_1_5: groups=16 sizes=[4] identical_scores=0 mean_range=2.25 random_mean_range=2.27
+R1 evidence_traceability_1_5: groups=16 sizes=[4] identical_scores=0 mean_range=2.00 random_mean_range=2.17
+R1 actionability_1_5: groups=16 sizes=[4] identical_scores=0 mean_range=2.12 random_mean_range=2.33
+R1 workload_1_5_lower_better: groups=16 sizes=[4] identical_scores=0 mean_range=2.19 random_mean_range=2.26
+R2 factual_correctness_1_5: groups=16 sizes=[4] identical_scores=1 mean_range=2.19 random_mean_range=2.25
+R2 evidence_traceability_1_5: groups=16 sizes=[4] identical_scores=0 mean_range=2.75 random_mean_range=2.86
+R2 actionability_1_5: groups=16 sizes=[4] identical_scores=0 mean_range=2.19 random_mean_range=2.21
+R2 workload_1_5_lower_better: groups=16 sizes=[4] identical_scores=0 mean_range=2.38 random_mean_range=2.48
+groups scored identically: 1 of 128
