@@ -35,12 +35,14 @@ Python 3.10 or later with the pinned packages:
     pip install -r requirements.txt
     python3 analysis/verify_reproduction.py
 
-`verify_reproduction.py` reruns the five self-contained scripts below in a clean copy and compares their outputs with the tracked ones; it exits with status 0 only if every check passes. The same check runs on every push (`.github/workflows/reproduce.yml`).
+`verify_reproduction.py` reruns the seven self-contained scripts below in a clean copy and compares their outputs with the tracked ones; it exits with status 0 only if every check passes. The same check runs on every push (`.github/workflows/reproduce.yml`).
 
 | Command | Regenerates | Seed |
 |---|---|---|
 | `python3 analysis/policy_property_check.py` | Table V: totality, monotone authority and containment precondition over 3,840 inputs (standard library only) | none |
 | `python3 analysis/offline_routing_test.py` | Table XVI and the E8 counts (standard library only) | none |
+| `python3 analysis/e8b_suricata_only_cost.py` | Revision: Suricata-only comparator and cost sensitivity of E8b (Tables XVII and XVIII of the revised manuscript; standard library only) | none |
+| `python3 analysis/e8c_rows.py` | Revision: rows of the specification-runtime differential table (E8c) from `experimental_results/e8c_spec_runtime/spec_runtime_differential.json` (standard library only) | none |
 | `python3 analysis/make_generated.py` | Tables VIII, X, XIII, XIV, XV, Fig. 4 and the numbers quoted in the text (`generated/`, `figures/`) | 20260921 (session bootstrap) |
 | `python3 analysis/e5_agreement.py` | E5 rating agreement: weighted kappa with bootstrap interval, exact agreement, within-reviewer consistency | 20260923 |
 | `python3 analysis/e6_supplementary_check.py` | Incident counts, model calls and drain times of the grouped E6 replay | none |
@@ -72,3 +74,13 @@ Code in `analysis/`: MIT (`LICENSE`). Data in `experimental_results/` and `expec
 ## Contact
 
 Corresponding authors: Phan Van Tri (phanvantri@actvn.edu.vn) and Nguyen An Khuong (nakhuong@hcmut.edu.vn). Data questions: Huynh Hoang Lam.
+
+## Specification-runtime differential test (E8c, added in revision)
+
+`analysis/spec_runtime_differential.py` calls the archived runtime functions of the evaluated system (the E4 policy functions, the E3 routing scripts and the responder), enumerates each function's own finite input domain, and compares the outcome with the checked routing specification. Its output and report are in `experimental_results/e8c_spec_runtime/`. The archived runtime files are not part of this repository; the JSON records the SHA-256 of each file that was used, and the files are available from the corresponding authors. With them, the test is rerun by
+
+```
+python3 analysis/spec_runtime_differential.py --runtime-dir <dir with the archived files> --spec-dir analysis --out experimental_results/e8c_spec_runtime/spec_runtime_differential.json
+```
+
+and takes about four minutes with Python 3.13. All responder runs are dry runs: no firewall command is issued.

@@ -9,6 +9,10 @@ Checks
   3. analysis/e6_supplementary_check.py -> stdout                                vs expected_outputs/e6_supplementary_check.txt
   4. analysis/policy_property_check.py  -> experimental_results/v2_policy/policy_property_check.json (tracked)
   5. analysis/offline_routing_test.py   -> experimental_results/v2_policy/offline_routing_test.json  (tracked)
+  6. analysis/e8b_suricata_only_cost.py -> experimental_results/v2_policy/e8b_suricata_only_cost.json (tracked)
+  7. analysis/e8c_rows.py             -> generated/e8c_rows.tex, generated/e8c_summary.json    vs expected_outputs/generated/
+     (reads the tracked output of analysis/spec_runtime_differential.py; that script is not rerun here because
+     it needs the archived runtime files, which are not part of this repository)
 JSON files are compared after parsing, so key order does not matter, and numbers are compared
 within a relative tolerance of 1e-9 so that last-digit differences between platforms do not fail the check. Exit status 0 means every check passed.
 Figures (PDF/PNG) are regenerated but not compared byte for byte.
@@ -73,6 +77,8 @@ with tempfile.TemporaryDirectory() as tmp:
 
     r = run("make_generated.py")
     check("make_generated.py runs", r.returncode == 0)
+    r = run("e8c_rows.py")
+    check("e8c_rows.py runs", r.returncode == 0)
     for f in sorted(os.listdir(os.path.join(EXP, "generated"))):
         new = os.path.join(tmp, "generated", f)
         old = os.path.join(EXP, "generated", f)
@@ -89,7 +95,8 @@ with tempfile.TemporaryDirectory() as tmp:
         check(f"{script} output", r.returncode == 0 and r.stdout == open(os.path.join(EXP, ref), encoding="utf8").read())
 
     for script, out in (("policy_property_check.py", "policy_property_check.json"),
-                        ("offline_routing_test.py", "offline_routing_test.json")):
+                        ("offline_routing_test.py", "offline_routing_test.json"),
+                        ("e8b_suricata_only_cost.py", "e8b_suricata_only_cost.json")):
         r = run(script)
         new = os.path.join(tmp, "experimental_results", "v2_policy", out)
         old = os.path.join(ROOT, "experimental_results", "v2_policy", out)

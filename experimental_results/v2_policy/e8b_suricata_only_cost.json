@@ -1,0 +1,131 @@
+{
+  "input_sha256": "be0b5e6917fbe81be0b9be8b5fc9a31dea8c9c9a02cadabc68886480d8a80911",
+  "sources": {
+    "primary": {
+      "policies": {
+        "blind": {
+          "normal": 3,
+          "scan": 3,
+          "high_impact": 9,
+          "U": 6,
+          "M": 0,
+          "reference_agreement": 9,
+          "cost": {
+            "0": 6.0,
+            "1/4": 6.0,
+            "1/2": 6.0,
+            "2/3": 6.0,
+            "1": 6.0,
+            "2": 6.0,
+            "5": 6.0,
+            "10": 6.0,
+            "20": 6.0
+          }
+        },
+        "aware": {
+          "normal": 0,
+          "scan": 0,
+          "high_impact": 0,
+          "U": 0,
+          "M": 9,
+          "reference_agreement": 6,
+          "cost": {
+            "0": 0.0,
+            "1/4": 2.25,
+            "1/2": 4.5,
+            "2/3": 6.0,
+            "1": 9.0,
+            "2": 18.0,
+            "5": 45.0,
+            "10": 90.0,
+            "20": 180.0
+          }
+        },
+        "suricata_only": {
+          "normal": 0,
+          "scan": 0,
+          "high_impact": 0,
+          "U": 0,
+          "M": 9,
+          "reference_agreement": 6,
+          "cost": {
+            "0": 0.0,
+            "1/4": 2.25,
+            "1/2": 4.5,
+            "2/3": 6.0,
+            "1": 9.0,
+            "2": 18.0,
+            "5": 45.0,
+            "10": 90.0,
+            "20": 180.0
+          }
+        }
+      },
+      "aware_equals_suricata_only_sessions": 15,
+      "break_even_r_blind_vs_aware": "2/3"
+    },
+    "supplementary": {
+      "policies": {
+        "blind": {
+          "normal": 3,
+          "scan": 3,
+          "high_impact": 9,
+          "U": 6,
+          "M": 0,
+          "reference_agreement": 9,
+          "cost": {
+            "0": 6.0,
+            "1/4": 6.0,
+            "1/2": 6.0,
+            "2/3": 6.0,
+            "1": 6.0,
+            "2": 6.0,
+            "5": 6.0,
+            "10": 6.0,
+            "20": 6.0
+          }
+        },
+        "aware": {
+          "normal": 0,
+          "scan": 0,
+          "high_impact": 6,
+          "U": 0,
+          "M": 3,
+          "reference_agreement": 12,
+          "cost": {
+            "0": 0.0,
+            "1/4": 0.75,
+            "1/2": 1.5,
+            "2/3": 2.0,
+            "1": 3.0,
+            "2": 6.0,
+            "5": 15.0,
+            "10": 30.0,
+            "20": 60.0
+          }
+        },
+        "suricata_only": {
+          "normal": 0,
+          "scan": 0,
+          "high_impact": 6,
+          "U": 0,
+          "M": 3,
+          "reference_agreement": 12,
+          "cost": {
+            "0": 0.0,
+            "1/4": 0.75,
+            "1/2": 1.5,
+            "2/3": 2.0,
+            "1": 3.0,
+            "2": 6.0,
+            "5": 15.0,
+            "10": 30.0,
+            "20": 60.0
+          }
+        }
+      },
+      "aware_equals_suricata_only_sessions": 15,
+      "break_even_r_blind_vs_aware": "2"
+    }
+  }
+}

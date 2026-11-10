@@ -1,0 +1,22 @@
+{
+  "responder_inputs": 118272,
+  "responder_control_flag_edges_violations": 3224,
+  "responder_containment_class_outcomes": 16244,
+  "responder_executed_without_human_approval_dry_run": 260,
+  "responder_pending_approval_requests": 15984,
+  "runner_composed_path_exceptions": 4320,
+  "responder_exceptions": 0,
+  "responder_comparable_inputs": 62208,
+  "responder_more_permissive_than_most_permissive_spec_input": 0,
+  "responder_inputs_exceeding_spec_for_some_provenance_quality": 24308,
+  "responder_inputs_agreeing_for_every_provenance_quality": 27168,
+  "advisory_text_replays": 29568,
+  "advisory_text_outcomes_changed": 0,
+  "runner_rows_with_simulated_effect": 24,
+  "runner_effects_without_valid_approval": 0,
+  "runner_outcome_row_inputs": 17280,
+  "approval_calls": 2016,
+  "approval_executed_despite_whitelist_or_reject": 0,
+  "functions_entered": 37,
+  "functions_total": 82
+}
