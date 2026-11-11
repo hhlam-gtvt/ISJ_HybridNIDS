@@ -13,6 +13,8 @@ Checks
   7. analysis/e8c_rows.py             -> generated/e8c_rows.tex, generated/e8c_summary.json    vs expected_outputs/generated/
      (reads the tracked output of analysis/spec_runtime_differential.py; that script is not rerun here because
      it needs the archived runtime files, which are not part of this repository)
+  8. analysis/verify_revision_evidence.py -> experimental_results/reviewer_revision/revision_evidence_summary.json
+     vs expected_outputs/revision_evidence_summary.json
 JSON files are compared after parsing, so key order does not matter, and numbers are compared
 within a relative tolerance of 1e-9 so that last-digit differences between platforms do not fail the check. Exit status 0 means every check passed.
 Figures (PDF/PNG) are regenerated but not compared byte for byte.
@@ -101,6 +103,11 @@ with tempfile.TemporaryDirectory() as tmp:
         new = os.path.join(tmp, "experimental_results", "v2_policy", out)
         old = os.path.join(ROOT, "experimental_results", "v2_policy", out)
         check(f"{script} -> {out}", r.returncode == 0 and json_same(new, old, out))
+    r = run("verify_revision_evidence.py")
+    new = os.path.join(tmp, "experimental_results", "reviewer_revision", "revision_evidence_summary.json")
+    old = os.path.join(ROOT, "expected_outputs", "revision_evidence_summary.json")
+    check("verify_revision_evidence.py -> revision_evidence_summary.json",
+          r.returncode == 0 and json_same(new, old, "revision_evidence_summary.json"))
 
 print(f"\n{len(failures)} failure(s)")
 sys.exit(1 if failures else 0)

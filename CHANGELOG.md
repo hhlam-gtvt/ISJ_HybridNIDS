@@ -4,7 +4,9 @@
 Added for the revision requested by the journal; nothing in the `isj-submission-v1.0` release was changed.
 - `analysis/e8b_suricata_only_cost.py` with its input `experimental_results/e3/e3_routing_inputs.csv` and output `experimental_results/v2_policy/e8b_suricata_only_cost.json`: Suricata-only comparator and cost sensitivity of the offline routing test (E8b).
 - `analysis/spec_runtime_differential.py`, `analysis/e8c_rows.py` and `experimental_results/e8c_spec_runtime/`: differential test of the checked routing specification against the archived runtime code (E8c). The runtime files are identified by SHA-256 and are not part of the repository.
-- `analysis/verify_reproduction.py` now also checks the E8b output and the E8c table rows.
+- `experimental_results/reviewer_revision/` reorganized: `historical_checks/` (E1 logs, E4 function tests, first grouped E6 replay) and `new_experiments/` (Suricata 60-run replay, E6 V2, responder audit and prototype, security tests), with a README. The duplicate folder `post_review_experimental_evidence/` was removed; its files are identical to `historical_checks/`.
+- `analysis/verify_revision_evidence.py` recomputes the figures of the revised manuscript from `new_experiments/`.
+- `analysis/verify_reproduction.py` now also checks the E8b output, the E8c table rows and the revision figures.
 
 ## isj-submission-v1.0 (24 September 2026)
 - Added `LICENSE` (MIT, code) and `LICENSE-DATA.md` (CC BY 4.0, data).

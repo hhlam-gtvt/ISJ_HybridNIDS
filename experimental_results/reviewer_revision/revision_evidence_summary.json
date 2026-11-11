@@ -1,0 +1,154 @@
+{
+  "e6_v2": {
+    "grouping_off_llm_off": {
+      "flows": 4577,
+      "jobs_done": 4577,
+      "jobs_total": 4577,
+      "llm_http": 0,
+      "quarantine_flows": 74,
+      "quarantine_jobs": 74,
+      "queue_to_done_p95_s": 456.517,
+      "wait_p95_s": 456.485,
+      "worker_p95_s": 0.991
+    },
+    "grouping_off_llm_selective": {
+      "flows": 4577,
+      "jobs_done": 4577,
+      "jobs_total": 4577,
+      "llm_http": 0,
+      "quarantine_flows": 74,
+      "quarantine_jobs": 74,
+      "queue_to_done_p95_s": 497.969,
+      "wait_p95_s": 497.939,
+      "worker_p95_s": 1.04
+    },
+    "grouping_on_llm_off": {
+      "flows": 4577,
+      "jobs_done": 9,
+      "jobs_total": 9,
+      "llm_http": 0,
+      "quarantine_flows": 74,
+      "quarantine_jobs": 3,
+      "queue_to_done_p95_s": 0.726,
+      "wait_p95_s": 0.627,
+      "worker_p95_s": 0.302
+    },
+    "grouping_on_llm_selective": {
+      "flows": 4577,
+      "jobs_done": 9,
+      "jobs_total": 9,
+      "llm_http": 1,
+      "quarantine_flows": 74,
+      "quarantine_jobs": 3,
+      "queue_to_done_p95_s": 33.833,
+      "wait_p95_s": 0.523,
+      "worker_p95_s": 33.5
+    }
+  },
+  "e6_v2_partition": {
+    "OFF_LLM_ON_vs_OFF": {
+      "changed_peer_set_count": 0,
+      "groups": [
+        4577,
+        4577
+      ],
+      "same_partition": true
+    },
+    "ON_LLM_ON_vs_OFF": {
+      "changed_peer_set_count": 0,
+      "groups": [
+        9,
+        9
+      ],
+      "same_partition": true
+    }
+  },
+  "e8_gap_and_prototype": {
+    "domain_size": 3840,
+    "gap_cases": 3839,
+    "original_high_candidates": 3840,
+    "original_soar_sha256": "84f11fa2a1e14cc863c572b33be5c59f025b4aef925ace9c5c7e7d9ca6ac23dc",
+    "prototype_cases": 3840,
+    "prototype_external_execution_calls": 0,
+    "prototype_mismatches": 0,
+    "prototype_status_counts": {
+      "PENDING": 1,
+      "SAFETY_HOLD": 3840
+    },
+    "spec_route_counts": {
+      "analyst_triage": 2,
+      "containment_proposal": 1,
+      "monitor": 11,
+      "safety_hold": 3825,
+      "watchlist": 1
+    },
+    "spec_sha256_matches_repository_script": true
+  },
+  "security_tests": {
+    "passed": 30,
+    "tests": 30
+  },
+  "suricata_replay": {
+    "cell_order": [
+      "7.0.3/all",
+      "7.0.3/none",
+      "8.0.4/all",
+      "8.0.4/none"
+    ],
+    "cells": {
+      "7.0.3/all": {
+        "alerts": 4276,
+        "sessions_with_alerts": 3
+      },
+      "7.0.3/none": {
+        "alerts": 4467,
+        "sessions_with_alerts": 3
+      },
+      "8.0.4/all": {
+        "alerts": 0,
+        "sessions_with_alerts": 0
+      },
+      "8.0.4/none": {
+        "alerts": 4467,
+        "sessions_with_alerts": 3
+      }
+    },
+    "checksum_pairs": 30,
+    "checksum_pairs_differing": 6,
+    "distinct_pcap_sha256": 15,
+    "engine_pairs": 30,
+    "engine_pairs_differing": 3,
+    "pcap_hashes_found_in_e1_manifest": 15,
+    "results_csv_sha256_matches_manifest": true,
+    "rule_file_sha256": [
+      "44adee2e5593bbc06567d99bab3d9c1e50fcfdbf56d7541c1881862bab0090ec"
+    ],
+    "rules_loaded": [
+      51623
+    ],
+    "ruleset_effect_tested": false,
+    "runs": 60,
+    "runs_exit_code_0": 60,
+    "runs_valid_eve": 60,
+    "sessions_with_any_alert": {
+      "E1_TEST_EXPLOIT_01": [
+        2271,
+        2364,
+        0,
+        2364
+      ],
+      "E1_TEST_EXPLOIT_02": [
+        1976,
+        2072,
+        0,
+        2072
+      ],
+      "E1_TEST_EXPLOIT_03": [
+        29,
+        31,
+        0,
+        31
+      ]
+    }
+  }
+}

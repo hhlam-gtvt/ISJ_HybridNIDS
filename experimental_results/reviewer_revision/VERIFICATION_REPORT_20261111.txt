@@ -1,8 +1,0 @@
-ISJ POST-REVIEW EVIDENCE RECHECK (2026-11-11)
-Original ZIP: ISJ_REVIEW_EVIDENCE_UPLOAD_20261111_COMPLETE.zip
-Original ZIP SHA256: 38d0bc96bc039c25976bc6feee08af7b3fb3be7b25da370a5cc4a5a9376daba7
-Original files: 61; SHA256SUMS verified entries: 60
-E1: 15/15 log Test, version 8.0.4, 51960 rules, 0 failed/skipped (theo audit va log)
-E4: 320 combinations, 1920 assertions, 24 diagnostics; 228/228 PASS (216 denied, 12 simulated allowed), NO firewall effects
-E6: 4577 input; OFF 13 jobs (10 DONE/3 DEAD), 249.519 s, LLM=0; selective 16 jobs (13 DONE/3 DEAD), 279.624 s, LLM=3; both PARTIAL
-LIMITATIONS: E4 228 checks use a simulated adapter (not deployed SOAR or firewall effects). E6 is exploratory grouping-enabled replay, not a fixed-job 2x2 ablation. Suricata rule-count and version logs do not establish byte-identical historical rulesets. This is an archive-integrity verification, not independent experiment replication.
