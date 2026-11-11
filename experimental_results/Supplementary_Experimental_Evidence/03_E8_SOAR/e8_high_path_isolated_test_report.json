@@ -1,0 +1,28 @@
+{
+  "test_kind": "ISOLATED_POST_REVIEW_HIGH_PATH_DIFFERENTIAL_NOT_DEPLOYED",
+  "frozen_spec_sha256": "d611aff1de33fce2c88feb304816947461f31a1b68a92371af38bb6208ba4e70",
+  "candidate_sha256": "6f29c6d4d90669b8445d6555f1a6b223a2f3cd320844b6cd28697eea6c218704",
+  "spec_cases": 3840,
+  "candidate_vs_spec_mismatches": 0,
+  "spec_routes": {
+    "monitor": 11,
+    "safety_hold": 3825,
+    "watchlist": 1,
+    "analyst_triage": 2,
+    "containment_proposal": 1
+  },
+  "executed_actual_patched_process_event_times": 3841,
+  "high_path_status_counts": {
+    "SAFETY_HOLD": 3840,
+    "PENDING": 1
+  },
+  "high_path_external_execution_calls": 0,
+  "high_path_hitl_requests": 1,
+  "limitations": [
+    "No trustworthy live NIDS evidence resolver is implemented",
+    "Only HIGH entrypoint protected, not complete E8 policy on LOW/MEDIUM",
+    "No producer auth, approval binding, manual-path security tests",
+    "External systems are mocks, not deployed runtime",
+    "PENDING is a proposal, NOT successful containment"
+  ]
+}

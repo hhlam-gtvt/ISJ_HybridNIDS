@@ -1,0 +1,138 @@
+{
+  "scope": "POST_REVIEW_ISOLATED_GUARD_TEST_ACTUAL_PATCHED_MANUAL_AND_QUEUE_AST",
+  "source_sha256": "05089e89304d42a37b6e868530758a3f5a313d0d806b6c806e78d98fb2d5d24f",
+  "tests": [
+    {
+      "case": "missing approval token denied",
+      "pass": true
+    },
+    {
+      "case": "forged approval signature denied",
+      "pass": true
+    },
+    {
+      "case": "wrong approval action denied",
+      "pass": true
+    },
+    {
+      "case": "wrong approval actor denied",
+      "pass": true
+    },
+    {
+      "case": "altered target signature denied",
+      "pass": true
+    },
+    {
+      "case": "altered decision signature denied",
+      "pass": true
+    },
+    {
+      "case": "expired approval denied",
+      "pass": true
+    },
+    {
+      "case": "approval cannot cross incident",
+      "pass": true
+    },
+    {
+      "case": "stale decision version denied",
+      "pass": true
+    },
+    {
+      "case": "valid signed REJECT accepted",
+      "pass": true
+    },
+    {
+      "case": "valid REJECT status committed",
+      "pass": true
+    },
+    {
+      "case": "duplicate approval denied",
+      "pass": true
+    },
+    {
+      "case": "token nonce first consume accepted",
+      "pass": true
+    },
+    {
+      "case": "token nonce replay denied",
+      "pass": true
+    },
+    {
+      "case": "no response engine called for invalid/reject decisions",
+      "pass": true
+    },
+    {
+      "case": "approved whitelisted incident handled",
+      "pass": true
+    },
+    {
+      "case": "whitelist changed after token blocks action",
+      "pass": true
+    },
+    {
+      "case": "whitelist prevented response-engine call",
+      "pass": true
+    },
+    {
+      "case": "signed approve passed to DRY_RUN stub",
+      "pass": true
+    },
+    {
+      "case": "exactly one dry-run response engine stub call",
+      "pass": true
+    },
+    {
+      "case": "unsigned producer payload denied",
+      "pass": true
+    },
+    {
+      "case": "authentic producer accepted",
+      "pass": true
+    },
+    {
+      "case": "producer nonce replay denied",
+      "pass": true
+    },
+    {
+      "case": "tampered event denied",
+      "pass": true
+    },
+    {
+      "case": "producer event id mismatch denied",
+      "pass": true
+    },
+    {
+      "case": "producer receipt expired denied",
+      "pass": true
+    },
+    {
+      "case": "only one authenticated event enqueued",
+      "pass": true
+    },
+    {
+      "case": "unauthenticated localhost denied",
+      "pass": true
+    },
+    {
+      "case": "incorrect localhost key denied",
+      "pass": true
+    },
+    {
+      "case": "correct localhost key accepted",
+      "pass": true
+    }
+  ],
+  "passed": 30,
+  "total": 30,
+  "all_pass": true,
+  "external_executions": 1,
+  "limitations": [
+    "No live Elasticsearch, Suricata/RF signature producer or independent producer keys verified",
+    "Token signer is a test fixture; not an authenticated multi-user admin identity service",
+    "Telegram/postblock/rollback disabled, not safely implemented",
+    "Signed APPROVE exercised with mocked DRY_RUN response, not real firewall execution",
+    "E8 trusted provenance resolver remains unimplemented",
+    "AST-extracted isolated tests are not deployed end-to-end runtime or firewall-effect verification"
+  ]
+}

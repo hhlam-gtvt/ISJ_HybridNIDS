@@ -1,0 +1,5 @@
+arm,member_flows,jobs_total,jobs_done,job_completion_pct,normal_quarantine_jobs,normal_quarantine_flows,non_quarantine_done_jobs,queue_wait_p50_ms,queue_wait_p95_ms,worker_to_done_p50_ms,worker_to_done_p95_ms,queue_to_done_p50_ms,queue_to_done_p95_ms,llm_invoked_trace,http_attempts_trace,http_attempts_routing
+grouping_on_llm_off,4577,9,9,100.0,3,74,6,401.185,627.111,108.01,302.15,583.934,726.041,0,0,0
+grouping_on_llm_selective,4577,9,9,100.0,3,74,6,313.032,522.517,82.488,33499.728,495.318,33833.182,1,1,1
+grouping_off_llm_off,4577,4577,4577,100.0,74,74,4503,395326.798,456485.424,330.309,991.254,396182.056,456516.738,0,0,0
+grouping_off_llm_selective,4577,4577,4577,100.0,74,74,4503,441513.958,497938.683,351.142,1040.097,442162.294,497968.872,0,0,0

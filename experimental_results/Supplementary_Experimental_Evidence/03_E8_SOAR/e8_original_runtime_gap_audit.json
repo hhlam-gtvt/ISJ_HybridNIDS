@@ -1,0 +1,211 @@
+{
+  "audit_type": "READ_ONLY_NEGATIVE_CONTROL_SPEC_VS_ORIGINAL_SOAR",
+  "not_claimed": [
+    "E8 deployed runtime equivalence",
+    "firewall action executed",
+    "NIDS provenance actually authenticated",
+    "runtime input mapping complete"
+  ],
+  "source_files": {
+    "soar": "/root/elk/e3_e6_work_20260922/auto_responder2.py",
+    "spec": "/root/elk/analysis/policy_property_check.py",
+    "soar_sha256": "84f11fa2a1e14cc863c572b33be5c59f025b4aef925ace9c5c7e7d9ca6ac23dc",
+    "spec_sha256": "d611aff1de33fce2c88feb304816947461f31a1b68a92371af38bb6208ba4e70",
+    "original_hashes_match": true
+  },
+  "runtime_ast": {
+    "process_event_line": 2687,
+    "decide_rule_call_lines": [
+      2790
+    ],
+    "execute_playbook_call_lines": [
+      2798
+    ],
+    "decide_rule_direct_input_attributes": [
+      "category",
+      "frequency"
+    ],
+    "original_code_whitelist_lookup_present": true,
+    "original_code_E8_function_call_present": false
+  },
+  "test": {
+    "domain_size": 3840,
+    "spec_repaired_route_counts": {
+      "monitor": 11,
+      "safety_hold": 3825,
+      "watchlist": 1,
+      "analyst_triage": 2,
+      "containment_proposal": 1
+    },
+    "original_soar_exploit_high_candidates": 3840,
+    "gap_cases_original_soar_high_vs_spec_not_containment": 3839,
+    "scenario_high_priority_controls": {
+      "EXPLOIT_frequency_1": true,
+      "BRUTE_FORCE_frequency_50": true,
+      "DOS_frequency_150": true,
+      "BRUTE_FORCE_frequency_1": false
+    },
+    "example_gap_inputs": [
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "clear",
+        "whitelist": "clear",
+        "spec_repaired_route": "monitor",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "clear",
+        "whitelist": "raised",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "clear",
+        "whitelist": "missing",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "clear",
+        "whitelist": "conflicting",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "raised",
+        "whitelist": "clear",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "raised",
+        "whitelist": "raised",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "raised",
+        "whitelist": "missing",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "raised",
+        "whitelist": "conflicting",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "missing",
+        "whitelist": "clear",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "missing",
+        "whitelist": "raised",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "missing",
+        "whitelist": "missing",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      },
+      {
+        "provenance": "none",
+        "quality": "high",
+        "drift": "clear",
+        "schema": "clear",
+        "shared_address": "missing",
+        "whitelist": "conflicting",
+        "spec_repaired_route": "safety_hold",
+        "soar_category": "EXPLOIT",
+        "soar_frequency": 1,
+        "original_soar_high_candidate": 1,
+        "differential_gap": 1
+      }
+    ],
+    "interpretation": "Policy-independent high-priority Rule Engine output, not proof of unsafe external execution; SOAR has separate whitelist and emergency stop gates. E8 safety attributes were not provided to the original decide_rule call. Differential route mismatch is structural."
+  },
+  "outputs": {
+    "matrix_csv": "/root/elk/reviewer_revision_20261111/E8_runtime_audit/e8_spec_vs_original_soar_matrix.csv"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "active_lines_only_ET7": 0,
+  "active_lines_only_ET8": 0,
+  "all_cells_valid": true,
+  "cells": [
+    {
+      "engine": "7.0.3",
+      "rules": "7.0.3"
+    },
+    {
+      "engine": "8.0.4",
+      "rules": "7.0.3"
+    }
+  ],
+  "cells_completed": 60,
+  "checksum_modes": [
+    "all",
+    "none"
+  ],
+  "completed_utc": "2026-11-11T08:59:17.022314+00:00",
+  "config_sha256": "fbcb2521653ac47767dc3da71db0d43fc03a3f7a2be56963ff8c1c6cd34dbd0f",
+  "created_utc": "2026-11-11T08:31:06.100921+00:00",
+  "experiment": "NEW_CONTROLLED_SURICATA_SENSITIVITY_NOT_HISTORICAL_REPRODUCTION",
+  "image_ids": {
+    "7.0.3": "sha256:01e8d513beb284c8738ce0fbd98a8e95d202f1e27a04c15b00c1c61c3a2b8fdc",
+    "8.0.4": "sha256:8058c0580c48cae4013bb8d576e5fe7cfe59884ea5526239056825b70c849ec8"
+  },
+  "limitations": [
+    "Historical ruleset snapshots not recovered.",
+    "EVE alerts/SIDs are NOT E8 containment eligibility without the frozen E8 gate.",
+    "Engine comparison includes any version-specific defaults under common YAML.",
+    "New ET7/ET8 rulesets require provenance and collection date in manuscript."
+  ],
+  "matched_deltas_csv_sha256": "2f7f91bae3858224ab2d2b27b44b1aebb87fdc2c548ea0c7f849915ca38a34f2",
+  "pcap_hashes": {
+    "E1_TEST_BRUTE_01": "67b0413c521a0329f41754eea3b6792ba4df179e6656b3999826887203f82b29",
+    "E1_TEST_BRUTE_02": "490609223cc54ef6ac35c690959dd42ad563915fcf2447c778d4b3d2864c422d",
+    "E1_TEST_BRUTE_03": "55f82e38fb3df0888bbf34d60b21b097de4525a731c7a2a6dae4ee2878964916",
+    "E1_TEST_DOS_01": "6dc4763f70eb14effa955166225210e1103a4aba1842612c43180e85ce1a728f",
+    "E1_TEST_DOS_02": "791f5a8f909dcaf98eb70456805c07721c731cad53a322b98b9547ab126a9caf",
+    "E1_TEST_DOS_03": "1e9546959c91be79ad767b2072ed93ab3b11300a011d9abace98360931e5ec36",
+    "E1_TEST_EXPLOIT_01": "f955ce4f1ec89d8584528b1edbedafcb8d9219511076bcb1a1630f4bb42f7ba8",
+    "E1_TEST_EXPLOIT_02": "ed36bd8e1f7ab7ccbd2058a3492ad2dd65204d5b7d76668dbfc63fadeb38c9e7",
+    "E1_TEST_EXPLOIT_03": "885340b20f724016da55b4454404a1ac6ff2027b9eb117b390669abe5c23b531",
+    "E1_TEST_NORMAL_01": "6a13ec964f6bdd3a8041501954ececed0ed91cfe850a752e97889071c3e72d5a",
+    "E1_TEST_NORMAL_02": "efba30993efe013aa2219282c95e931bbdac225f83961d2d63844ca0efeb3bcd",
+    "E1_TEST_NORMAL_03": "61bba1b3046c6beb6b757e1ba3e5738e87d35ef3d22548daa63e480d7c0f20df",
+    "E1_TEST_SCAN_01": "6c8ae0b2c88c863232b1829d2a0b70d48030a75c34d40bec6cc4f620931b879e",
+    "E1_TEST_SCAN_02": "597367a892f0e19082da076295506b396b5dc0e1d455304e365f7aacb481d2ad",
+    "E1_TEST_SCAN_03": "8a3a928509b9e8ff3707426c16d8a577023bd29ab38c733b66ec8fcf898a45e0"
+  },
+  "pcaps": 15,
+  "pilot": false,
+  "preflight_results": {
+    "E7.0.3_R7.0.3": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=/root/elk/controlled_review_experiments_20261111/E1_new_sensitivity/common_config,target=/config,readonly",
+        "--mount",
+        "type=bind,source=/root/elk/controlled_review_experiments_20261111/E1_new_sensitivity/direct_et,target=/rules,readonly",
+        "--entrypoint",
+        "suricata",
+        "jasonish/suricata:7.0.3",
+        "-T",
+        "-v",
+        "-c",
+        "/config/suricata_common_v3.yaml",
+        "-S",
+        "/rules/et_7.0.3.rules",
+        "-l",
+        "/tmp"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "rule_counts": {
+        "failed": 0,
+        "loaded": 51623,
+        "skipped": 0
+      },
+      "stdout_sha256": "31b35886fd4d6b712ac822dfd0dd34b3544506f1a627abb2696e37e03514a114"
+    },
+    "E8.0.4_R7.0.3": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=/root/elk/controlled_review_experiments_20261111/E1_new_sensitivity/common_config,target=/config,readonly",
+        "--mount",
+        "type=bind,source=/root/elk/controlled_review_experiments_20261111/E1_new_sensitivity/direct_et,target=/rules,readonly",
+        "--entrypoint",
+        "suricata",
+        "jasonish/suricata:8.0.4",
+        "-T",
+        "-v",
+        "-c",
+        "/config/suricata_common_v3.yaml",
+        "-S",
+        "/rules/et_7.0.3.rules",
+        "-l",
+        "/tmp"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "rule_counts": {
+        "failed": 0,
+        "loaded": 51623,
+        "skipped": 0
+      },
+      "stdout_sha256": "d5813cd98ecaf69dda1d9971e3627ddb93cd3f7cf06aeca4b97d90ce290be1ef"
+    }
+  },
+  "results_csv_sha256": "917f6b27de581c82789d028e4cf7b613ca5919c32c268dfd8a8fcca8173a6340",
+  "rules": {
+    "ET7": {
+      "active_rule_lines": 51623,
+      "active_sha256": "b944360777429e827e2ae365fcd24ec9bd08657e983699312d098f3a28919d8e",
+      "file": "/root/elk/controlled_review_experiments_20261111/E1_new_sensitivity/direct_et/et_7.0.3.rules",
+      "file_sha256": "44adee2e5593bbc06567d99bab3d9c1e50fcfdbf56d7541c1881862bab0090ec",
+      "sid_count": 51623
+    },
+    "ET8": {
+      "active_rule_lines": 51623,
+      "active_sha256": "b944360777429e827e2ae365fcd24ec9bd08657e983699312d098f3a28919d8e",
+      "file": "/root/elk/controlled_review_experiments_20261111/E1_new_sensitivity/direct_et/et_8.0.4.rules",
+      "file_sha256": "44adee2e5593bbc06567d99bab3d9c1e50fcfdbf56d7541c1881862bab0090ec",
+      "sid_count": 51623
+    }
+  },
+  "ruleset_effect_tested": false,
+  "rulesets_distinct_by_active_lines": false,
+  "run_start_utc": "2026-11-11T08:31:46.822638+00:00",
+  "runner_sha256": "838439b2a8835dedb722764beac2b183701fd9aed41994330af05e5768a1809a",
+  "safety": "Docker --network none; --entrypoint suricata -r; rules/config/pcap read-only; no firewall",
+  "source_config": "/root/elk/controlled_review_experiments_20261111/E1_new_sensitivity/common_config/suricata_common_v3.yaml",
+  "status": "COMPLETE_NEW_SENSITIVITY",
+  "total_replays": 60
+}
