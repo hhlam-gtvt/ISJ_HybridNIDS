@@ -40,11 +40,11 @@ Python 3.10 or later with the pinned packages:
 | Command | Regenerates | Seed |
 |---|---|---|
 | `python3 analysis/policy_property_check.py` | Table V: totality, monotone authority and containment precondition over 3,840 inputs (standard library only) | none |
-| `python3 analysis/offline_routing_test.py` | Table XVI and the E8 counts (standard library only) | none |
-| `python3 analysis/e8b_suricata_only_cost.py` | Revision: Suricata-only comparator and cost sensitivity of E8b (Tables XVII and XVIII of the revised manuscript; standard library only) | none |
+| `python3 analysis/offline_routing_test.py` | Table XIX and the E8 counts (standard library only) | none |
+| `python3 analysis/e8b_suricata_only_cost.py` | Revision: Suricata-only comparator and cost sensitivity of E8b (Tables XIX and XX of the revised manuscript; standard library only) | none |
 | `python3 analysis/e8c_rows.py` | Revision: rows of the specification-runtime differential table (E8c) from `experimental_results/e8c_spec_runtime/spec_runtime_differential.json` (standard library only) | none |
 | `python3 analysis/verify_revision_evidence.py` | Revision: figures of the Suricata replay, E6 V2, the responder audit and the security tests, recomputed from `experimental_results/reviewer_revision/new_experiments/` (standard library only) | none |
-| `python3 analysis/make_generated.py` | Tables VIII, X, XIII, XIV, XV, Fig. 4 and the numbers quoted in the text (`generated/`, `figures/`) | 20260921 (session bootstrap) |
+| `python3 analysis/make_generated.py` | Tables VIII, XI, XIV, XV, XVI, Fig. 4 and the numbers quoted in the text (`generated/`, `figures/`) | 20260921 (session bootstrap) |
 | `python3 analysis/e5_agreement.py` | E5 rating agreement: weighted kappa with bootstrap interval, exact agreement, within-reviewer consistency | 20260923 |
 | `python3 analysis/e6_supplementary_check.py` | Incident counts, model calls and drain times of the grouped E6 replay | none |
 

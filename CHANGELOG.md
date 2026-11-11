@@ -1,5 +1,10 @@
 # Changelog
 
+## isj-revision-r2 (12 November 2026)
+- Table and section numbers in `README.md` and `REPRODUCIBILITY_MANIFEST.csv` follow the revised manuscript (23 pages): fusion is Table XI, E5 is Table XIV, the E6 planes are Tables XV and XVI, offline routing and its cost table are Tables XIX and XX, and the specification-runtime differential test is reported in Section IV-E.
+- `experimental_results/reviewer_revision/README.md`: the manifest of `historical_checks/` has 61 entries, not 60.
+- No data file or analysis script changed.
+
 ## isj-revision-r1 (November 2026)
 Added for the revision requested by the journal; nothing in the `isj-submission-v1.0` release was changed.
 - `analysis/e8b_suricata_only_cost.py` with its input `experimental_results/e3/e3_routing_inputs.csv` and output `experimental_results/v2_policy/e8b_suricata_only_cost.json`: Suricata-only comparator and cost sensitivity of the offline routing test (E8b).
