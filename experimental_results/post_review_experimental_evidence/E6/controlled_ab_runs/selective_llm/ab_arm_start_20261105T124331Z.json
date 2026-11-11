@@ -1,0 +1,16 @@
+{
+  "arm": "selective_llm",
+  "source_sha256": "04820d36af3691482dfa92806a2eb5ae70b82e483b2f096732e8c18ad8c161fb",
+  "frozen_runner_sha256": "cc358b7c5765d076e9f8392b28dde29ad70116087d0f779aa5bc29c2b95a17b1",
+  "frozen_wrapper_sha256": "8ce5f1403d438a21c12e98fe69fd37cc5e271a974344570caa37a4c6bab39046",
+  "frozen_gate_sha256": "beb54179e79ee87e25f59c2721d4309017d1fe0ab2388bcca2011ae23ab749a0",
+  "ab_launcher_sha256": "b83c13ca71b8f3a0ed3f963eb661498e797f90d2ff752008e6a36a9a229bcfab",
+  "grouping": "ON - frozen E6 v552 grouping in BOTH arms",
+  "llm": "frozen E6 selective LLM gate",
+  "workload": "0p5 archived NIDS alert flows (not new traffic)",
+  "docs": 4577,
+  "replay_basis": "original queue-created timestamp offsets",
+  "safety": "DRY_RUN; NO real firewall enforcement; dedicated DB and ES index",
+  "limits": "Two arms are not 2x2; this ablation does not verify original E6 integrated performance",
+  "preflight_utc": "2026-11-05T12:43:31.731977+00:00"
+}

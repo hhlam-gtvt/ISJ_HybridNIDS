@@ -1,0 +1,106 @@
+[+] Static RAG: knowledge_base.json | version=1.1.0 | method=EXACT_CATEGORY_MATCH
+================================================================
+E6 INSTRUMENTED RESPONSE PIPELINE
+Trace output: /root/elk/reviewer_revision_20261105/E6/controlled_ab_runs/selective_llm/0p5_20261105T124331Z/e6_response_trace.csv
+Run ID: laptop_0p5_20261105T124331Z
+Rate: 0.5
+Rep: 0
+ES index: e6-v552-laptop-0p5-20261105t124331z
+DB: /root/elk/reviewer_revision_20261105/E6/controlled_ab_runs/selective_llm/0p5_20261105T124331Z/e6_response_lam.db
+FIREWALL=DRY_RUN; TG=DISABLED; no namespace/tcpreplay
+================================================================
+[RECOVERY] Không có incident bị kẹt EXECUTING.
+================================================================
+SOAR ORCHESTRATOR 8.0 FINAL - POST-BLOCK LLM ADVISORY FOR ADMIN
+ES: http://localhost:9200/e6-v552-laptop-0p5-20261105t124331z
+Workers: 4
+Ollama: http://127.0.0.1:11434 | model=llama3.2:3b
+Static RAG: knowledge_base.json | exact match | no vector DB
+Whitelist: IP/CIDR | dual gate | FAIL-CLOSED
+Firewall: DRY-RUN
+API auth: LOCAL LAB BYPASS
+================================================================
+[!] Telegram tắt vì chưa cấu hình TG_TOKEN/TG_CHAT_ID.
+[+] API LAB: localhost được phép thao tác không cần API key.
+[+] API: http://127.0.0.1:5507
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+Traceback (most recent call last):
+  File "/root/elk/e6_integration/e6_trace_wrapper_lam_v552.py", line 630, in patched_worker_loop
+    event = patched_normalize_event(es_id, __import__("json").loads(row["payload"]))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/elk/e6_integration/e6_trace_wrapper_lam_v552.py", line 400, in patched_normalize_event
+    result = _orig_normalize_event(es_id, source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/elk/auto_responder2_e6v552.py", line 690, in normalize_event
+    raise ValidationError(
+auto_responder2_e6v552.ValidationError: Category không được hỗ trợ: 'Normal'. Hãy sửa Simulator hoặc bổ sung CATEGORY_ALIASES.
+[-] worker-1: queue=1 -> DEAD: Category không được hỗ trợ: 'Normal'. Hãy sửa Simulator hoặc bổ sung CATEGORY_ALIASES.
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+Traceback (most recent call last):
+  File "/root/elk/e6_integration/e6_trace_wrapper_lam_v552.py", line 630, in patched_worker_loop
+    event = patched_normalize_event(es_id, __import__("json").loads(row["payload"]))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/elk/e6_integration/e6_trace_wrapper_lam_v552.py", line 400, in patched_normalize_event
+    result = _orig_normalize_event(es_id, source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/elk/auto_responder2_e6v552.py", line 690, in normalize_event
+    raise ValidationError(
+auto_responder2_e6v552.ValidationError: Category không được hỗ trợ: 'Normal'. Hãy sửa Simulator hoặc bổ sung CATEGORY_ALIASES.
+[-] worker-2: queue=2 -> DEAD: Category không được hỗ trợ: 'Normal'. Hãy sửa Simulator hoặc bổ sung CATEGORY_ALIASES.
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+Traceback (most recent call last):
+  File "/root/elk/e6_integration/e6_trace_wrapper_lam_v552.py", line 630, in patched_worker_loop
+    event = patched_normalize_event(es_id, __import__("json").loads(row["payload"]))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/elk/e6_integration/e6_trace_wrapper_lam_v552.py", line 400, in patched_normalize_event
+    result = _orig_normalize_event(es_id, source)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/elk/auto_responder2_e6v552.py", line 690, in normalize_event
+    raise ValidationError(
+auto_responder2_e6v552.ValidationError: Category không được hỗ trợ: 'Normal'. Hãy sửa Simulator hoặc bổ sung CATEGORY_ALIASES.
+[-] worker-3: queue=3 -> DEAD: Category không được hỗ trợ: 'Normal'. Hãy sửa Simulator hoặc bổ sung CATEGORY_ALIASES.
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-4: e6_laptop_0p5_20261105T124331Z_INC_fea8c6a7a57621d3cc5c773e | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-1: e6_laptop_0p5_20261105T124331Z_INC_c70d5f47a1fb92706862437a | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] LLM MEDIUM_PRE ACCEPTED | model=llama3.2:3b | grounding=85/100 | 64.657s
+[+] worker-2: e6_laptop_0p5_20261105T124331Z_INC_36e592931667c7cc1913dd1b | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-1: e6_laptop_0p5_20261105T124331Z_INC_29e504a4db8711adeb260b14 | EXPLOIT | 192.168.10.101
+[E6 v552] 2 sealed incidents enqueued
+[+] Đồng bộ 2 document vào durable queue.
+[+] worker-2: e6_laptop_0p5_20261105T124331Z_INC_2f07e648d33b12b1b3457a81 | EXPLOIT | 192.168.10.101
+[+] worker-1: e6_laptop_0p5_20261105T124331Z_INC_d4a1a3fc7e177fca3fdda78a | EXPLOIT | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-2: e6_laptop_0p5_20261105T124331Z_INC_b8551ac7ced0a70d47d32921 | EXPLOIT | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-1: e6_laptop_0p5_20261105T124331Z_INC_0958fdb4f7dac2a694ffff05 | EXPLOIT | 192.168.10.101
+[+] LLM MEDIUM_PRE ACCEPTED | model=llama3.2:3b | grounding=85/100 | 93.183s
+[+] worker-3: e6_laptop_0p5_20261105T124331Z_INC_9cb424a3e965b6c6a8288dc0 | SUSPICIOUS_SCAN | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-2: e6_laptop_0p5_20261105T124331Z_INC_1c9b35308d41ef71754b51fd | EXPLOIT | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-1: e6_laptop_0p5_20261105T124331Z_INC_c8116e5e60b2014e0e2cadfd | EXPLOIT | 192.168.10.101
+[E6 v552] 1 sealed incidents enqueued
+[+] Đồng bộ 1 document vào durable queue.
+[+] worker-3: e6_laptop_0p5_20261105T124331Z_INC_599290b0b9e1ea97dacca6bb | EXPLOIT | 192.168.10.101
+[+] LLM MEDIUM_PRE ACCEPTED | model=llama3.2:3b | grounding=85/100 | 156.993s
+[+] worker-4: e6_laptop_0p5_20261105T124331Z_INC_f7161eadcf8727180b2317d5 | SUSPICIOUS_SCAN | 192.168.10.101
+
+[+] Dừng chương trình.

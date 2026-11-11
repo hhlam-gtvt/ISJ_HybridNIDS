@@ -1,0 +1,75 @@
+{
+  "policy_freeze_version": "E4-RQ3-POLICY-FREEZE-v1.0",
+  "action_matrix_version": "E4-ACTION-MATRIX-v1.0",
+  "runner_version": "E4-OFFLINE-DRYRUN-v1.0",
+  "main_execution_mode": "DRY_RUN",
+  "action_matrix": {
+    "normal": {
+      "action": "NO_ACTION",
+      "ttl_seconds": 0,
+      "impact": "NONE"
+    },
+    "scan": {
+      "action": "WATCHLIST",
+      "ttl_seconds": 86400,
+      "impact": "INTERNAL"
+    },
+    "brute_force": {
+      "action": "RATE_LIMIT",
+      "ttl_seconds": 900,
+      "impact": "HIGH"
+    },
+    "dos": {
+      "action": "RATE_LIMIT",
+      "ttl_seconds": 900,
+      "impact": "HIGH"
+    },
+    "exploit": {
+      "action": "BLOCK",
+      "ttl_seconds": 3600,
+      "impact": "HIGH"
+    }
+  },
+  "provenance_blind_policy": {
+    "allowed_inputs": [
+      "scenario"
+    ],
+    "forbidden_inputs": [
+      "detector_identity",
+      "corroboration_type",
+      "confidence_status",
+      "evidence_count",
+      "evidence_quality",
+      "reason_code"
+    ],
+    "rule": "Map scenario directly through frozen action matrix."
+  },
+  "provenance_aware_policy": {
+    "allowed_inputs": [
+      "scenario",
+      "corroboration_type",
+      "confidence_status",
+      "evidence_count",
+      "evidence_quality",
+      "reason_code"
+    ],
+    "rule": "Same frozen action matrix, but withhold HIGH-impact candidate when evidence quality/provenance is inadequate."
+  },
+  "independent_safety_gates": [
+    "whitelist",
+    "shared_or_nat_address",
+    "critical_asset",
+    "approval_validity"
+  ],
+  "declared_crash_points": [
+    "CP1_AFTER_DURABLE_ENQUEUE",
+    "CP2_AFTER_CLAIM_BEFORE_DECISION",
+    "CP3_AFTER_DECISION_BEFORE_ACTION_INTENT",
+    "CP4_AFTER_ACTION_INTENT_BEFORE_EFFECT",
+    "CP5_AFTER_EFFECT_BEFORE_STATE_COMMIT",
+    "CP6_AFTER_STATE_COMMIT_BEFORE_QUEUE_DONE"
+  ],
+  "approval_scheme": "E4-HMAC-APPROVAL-v1.0",
+  "approval_secret_sha256": "7192e86bfd4ecf9185c1d82eb2d27b0e8a7cab605e95a3d049bdf6a6d2cd6454",
+  "note": "Test secret is dry-run only; production secret must be provided out-of-band via environment/secret store."
+}
