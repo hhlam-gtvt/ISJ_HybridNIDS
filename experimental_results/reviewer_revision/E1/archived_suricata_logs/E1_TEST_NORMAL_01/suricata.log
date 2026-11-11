@@ -1,0 +1,19 @@
+[28813 - Suricata-Main] 2026-09-18 16:56:55 Notice: suricata: This is Suricata version 8.0.4 RELEASE running in USER mode
+[28813 - Suricata-Main] 2026-09-18 16:56:55 Info: cpu: CPUs/cores online: 6
+[28813 - Suricata-Main] 2026-09-18 16:56:55 Info: suricata: Setting engine mode to IDS mode by default
+[28813 - Suricata-Main] 2026-09-18 16:56:55 Info: exception-policy: master exception-policy set to: auto
+[28813 - Suricata-Main] 2026-09-18 16:56:55 Info: suricata: Preparing unexpected signal handling
+[28813 - Suricata-Main] 2026-09-18 16:56:55 Info: logopenfile: eve-log output device (regular) initialized: eve.json
+[28813 - Suricata-Main] 2026-09-18 16:56:55 Info: logopenfile: stats output device (regular) initialized: stats.log
+[28813 - Suricata-Main] 2026-09-18 16:57:12 Info: detect: 2 rule files processed. 51960 rules successfully loaded, 0 rules failed, 0 rules skipped
+[28813 - Suricata-Main] 2026-09-18 16:57:12 Info: threshold-config: Threshold config parsed: 0 rule(s) found
+[28813 - Suricata-Main] 2026-09-18 16:57:12 Info: detect: 51965 signatures processed. 1309 are IP-only rules, 4505 are inspecting packet payload, 45911 inspect application layer, 110 are decoder event only
+[28813 - Suricata-Main] 2026-09-18 16:57:12 Warning: detect: rule 9000004: SYN-only to port(s) 22:22 w/o direction specified, disabling for toclient direction
+[28834 - RX#01] 2026-09-18 16:57:14 Info: pcap: Starting file run for /home/admin_soc/hybrid-nids/experimental_results/e1/sessions/test/E1_TEST_NORMAL_01/capture.pcap
+[28834 - RX#01] 2026-09-18 16:57:14 Info: pcap: pcap file /home/admin_soc/hybrid-nids/experimental_results/e1/sessions/test/E1_TEST_NORMAL_01/capture.pcap end of file reached (pcap err code 0)
+[28813 - Suricata-Main] 2026-09-18 16:57:14 Notice: threads: Threads created -> RX: 1 W: 6 FM: 1 FR: 1   Engine started.
+[28813 - Suricata-Main] 2026-09-18 16:57:14 Notice: suricata: Signal Received.  Stopping engine.
+[28813 - Suricata-Main] 2026-09-18 16:57:14 Info: suricata: time elapsed 0.160s
+[28834 - RX#01] 2026-09-18 16:57:14 Warning: pcap: 1/1th of packets have an invalid checksum, consider setting pcap-file.checksum-checks variable to no or use '-k none' option on command line.
+[28834 - RX#01] 2026-09-18 16:57:14 Notice: pcap: read 1 file, 333 packets, 35220 bytes
+[28813 - Suricata-Main] 2026-09-18 16:57:14 Info: counters: Alerts: 340

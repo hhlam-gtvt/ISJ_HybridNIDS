@@ -1,0 +1,18 @@
+{
+  "completed_utc": "2026-11-05T12:36:49.799+00:00",
+  "elapsed_including_drain_s": 249.519,
+  "source_docs_indexed": 4577,
+  "alert_members_observed": 4577,
+  "queue_incomplete": 0,
+  "queue_dead": 3,
+  "group_open": 0,
+  "llm_route_csv_present": true,
+  "status": "PARTIAL",
+  "limits": [
+    "Archived input replay; not new NIDS traffic or integrated E6 3-rate result",
+    "Archived 1p0 source is a smoke run; 0p5/1p0 cohorts have different scenarios",
+    "Original @timestamp retained; derived packet-to-response latency is NOT a new NIDS latency",
+    "Actual HTTP attempts, not LLM reservations, show model execution",
+    "QUEUE_DONE does not prove completion of HITL / firewall effect"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "alert_flow_members": 4577,
+  "incident_groups_total": 16,
+  "incident_groups_open": 0,
+  "flow_group_mapping_consistent": true,
+  "queue_done": 13,
+  "queue_dead": 3,
+  "queue_incomplete": 0,
+  "llm_call_reservations": 4,
+  "llm_calls_observed_in_route_csv": 3
+}
+SAVED: /root/elk/reviewer_revision_20261105/E6/controlled_ab_runs/selective_llm/0p5_20261105T124331Z/e6_v552_queue_report.json
+

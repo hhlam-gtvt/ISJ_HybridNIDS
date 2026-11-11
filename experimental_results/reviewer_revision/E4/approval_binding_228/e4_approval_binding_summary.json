@@ -1,0 +1,20 @@
+{
+  "scope": "ARCHIVED E4 PURE POLICY + SIMULATED ADAPTER, NOT DEPLOYED PRODUCTION SOAR",
+  "source_sha256": "110133dac685ebd5320d3bc8fcf9954365ea424ee860f0b88b00180c421afadc",
+  "tested_combinations": 228,
+  "pass": 228,
+  "failed": 0,
+  "negative_result_count": 216,
+  "simulated_allowed_effect_count": 12,
+  "firewall_effects": "NONE",
+  "producer_authentication": "NOT_TESTED",
+  "approval_binding_scope": "HMAC token bound to case_id and action_id in E4 function",
+  "replay_revocation_and_persistence": "NOT_TESTED",
+  "runtime_parity": "NOT_TESTED",
+  "test_semantics": "valid token permits simulated effect when whitelist false; invalid token, whitelist or invalid source IP must not",
+  "limitations": [
+    "Uses hard-coded laboratory-only HMAC secret from E4 archived runner",
+    "No live firewall / packet propagation / production approval service",
+    "No actual producer authentication, credential storage or key rotation"
+  ]
+}

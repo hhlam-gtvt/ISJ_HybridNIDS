@@ -1,0 +1,22 @@
+{
+  "observed_utc": "2026-11-05T12:47:12.764+00:00",
+  "source_docs_indexed": 4577,
+  "snapshot": {
+    "db_ready": true,
+    "flow_members": 4282,
+    "incident_groups": 15,
+    "group_states": {
+      "OPEN": 1,
+      "QUEUED": 14
+    },
+    "queue_status": {
+      "DEAD": 3,
+      "DONE": 10,
+      "PROCESSING": 1
+    },
+    "queue_incomplete": 1,
+    "queue_dead": 3,
+    "queue_done": 10
+  },
+  "note": "Includes possible Elasticsearch ingest lag; compare with end-of-drain snapshot"
+}
