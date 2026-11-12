@@ -8,7 +8,7 @@ Data and code for the manuscript
 
 The study connects a passive Suricata and Random-Forest (RF) detector to a post-alert subsystem in which rules and human approval hold all response authority. It checks the routing policy as a finite function, compares provenance-blind, provenance-aware and all-to-analyst routing on detector-derived incidents, and reports a laboratory case study in eight experiments (E1 to E8).
 
-**Release:** `isj-revision-r2`, which adds the revision material to `isj-submission-v1.0` and changes none of its data files and none of its scripts other than `analysis/verify_reproduction.py`, which was extended to check the revision outputs. Changes are listed in `CHANGELOG.md`; `NOTES_ON_MANUSCRIPT.md` states how three sentences of the submitted text relate to the first release.
+**Release:** `isj-revision-r2`, which adds the revision material to `isj-submission-v1.0` and changes none of its data files and none of its scripts other than `analysis/verify_reproduction.py`, which was extended to check the revision outputs. Changes are listed in `CHANGELOG.md`; `NOTES_ON_MANUSCRIPT.md` states how the submitted text relates to the first release.
 
 ## What this release contains
 
