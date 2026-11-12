@@ -3,6 +3,10 @@
 ## isj-revision-r2 (12 November 2026)
 - Table and section numbers in `README.md` and `REPRODUCIBILITY_MANIFEST.csv` follow the revised manuscript (23 pages): fusion is Table XI, E5 is Table XIV, the E6 planes are Tables XV and XVI, offline routing and its cost table are Tables XIX and XX, and the specification-runtime differential test is reported in Section IV-E.
 - `experimental_results/reviewer_revision/README.md`: the manifest of `historical_checks/` has 61 entries, not 60.
+- `README.md` and `CITATION.cff` carry the revised title and the release name `isj-revision-r2`.
+- `README.md` and `REPRODUCIBILITY_MANIFEST.csv`: four of the eight runtime files used by `analysis/spec_runtime_differential.py` are in this repository and four are not; the r1 entry below said that none was.
+- `experimental_results/reviewer_revision/README.md`: note on the entry count printed in `historical_checks/VERIFICATION_REPORT_20261111.txt`.
+- `NOTES_ON_MANUSCRIPT.md`: its table and section numbers are those of the submitted text.
 - No data file or analysis script changed.
 
 ## isj-revision-r1 (November 2026)

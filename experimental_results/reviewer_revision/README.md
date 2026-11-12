@@ -13,7 +13,7 @@ Everything in this folder was produced after the reviews of the submitted manusc
 | `new_experiments/04_Security/` | 30 isolated security-control tests on a separate, non-deployed branch | report |
 | `revision_evidence_summary.json` | Figures of the revised manuscript recomputed from `new_experiments/` by `analysis/verify_revision_evidence.py` | generated |
 
-`historical_checks/SHA256SUMS.txt` (61 entries) and `new_experiments/SHA256SUMS.txt` (7 entries) list the files as uploaded; both verify with `sha256sum -c` from inside their folder.
+`historical_checks/SHA256SUMS.txt` (61 entries) and `new_experiments/SHA256SUMS.txt` (7 entries) list the files as uploaded; both verify with `sha256sum -c` from inside their folder. `historical_checks/VERIFICATION_REPORT_20261111.txt` prints 60 verified entries because it was written before it was itself added to the manifest as the 61st entry; it is kept as uploaded.
 
 The files under `new_experiments/` are summary exports. The 60 EVE output folders, the queue traces, the prototype and security-branch sources, and the original SQLite databases are kept on the experiment workstation and are not part of this repository. The captures used by the Suricata replay are the E1 Test captures, identified by the SHA-256 values in `experimental_results/e1_pcap_sha256.txt`.
 

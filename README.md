@@ -3,12 +3,12 @@
 Data and code for the manuscript
 
 > Tang Quoc Cuong, Huynh Hoang Lam, Phan Van Tri, Nguyen An Khuong.
-> *Provenance-Aware Post-Alert Routing for Hybrid Network Intrusion Detection under Domain Shift: A Checked Policy and a Laboratory Evaluation.*
-> Submitted to the Journal of Science and Technology on Information Security (ISJ), 23 September 2026.
+> *Provenance-Aware Post-Alert Routing for Hybrid Network Intrusion Detection: Specification Checking and a Controlled Laboratory Case Study.*
+> Journal of Science and Technology on Information Security (ISJ), manuscript 6475. Submitted on 23 September 2026 under the title *Provenance-Aware Post-Alert Routing for Hybrid Network Intrusion Detection under Domain Shift: A Checked Policy and a Laboratory Evaluation*; revised in November 2026.
 
 The study connects a passive Suricata and Random-Forest (RF) detector to a post-alert subsystem in which rules and human approval hold all response authority. It checks the routing policy as a finite function, compares provenance-blind, provenance-aware and all-to-analyst routing on detector-derived incidents, and reports a laboratory case study in eight experiments (E1 to E8).
 
-**Release:** `isj-submission-v1.0`. Changes are listed in `CHANGELOG.md`; `NOTES_ON_MANUSCRIPT.md` states how three sentences of the submitted text relate to this release.
+**Release:** `isj-revision-r2`, which adds the revision material to `isj-submission-v1.0` and changes none of its data files and none of its scripts other than `analysis/verify_reproduction.py`, which was extended to check the revision outputs. Changes are listed in `CHANGELOG.md`; `NOTES_ON_MANUSCRIPT.md` states how three sentences of the submitted text relate to the first release.
 
 ## What this release contains
 
@@ -42,10 +42,10 @@ Python 3.10 or later with the pinned packages:
 | `python3 analysis/policy_property_check.py` | Table V: totality, monotone authority and containment precondition over 3,840 inputs (standard library only) | none |
 | `python3 analysis/offline_routing_test.py` | Table XIX and the E8 counts (standard library only) | none |
 | `python3 analysis/e8b_suricata_only_cost.py` | Revision: Suricata-only comparator and cost sensitivity of E8b (Tables XIX and XX of the revised manuscript; standard library only) | none |
-| `python3 analysis/e8c_rows.py` | Revision: rows of the specification-runtime differential table (E8c) from `experimental_results/e8c_spec_runtime/spec_runtime_differential.json` (standard library only) | none |
+| `python3 analysis/e8c_rows.py` | Revision: rows summarizing the specification-runtime differential test (E8c; reported as text in Section IV-E, not printed as a table) from `experimental_results/e8c_spec_runtime/spec_runtime_differential.json` (standard library only) | none |
 | `python3 analysis/verify_revision_evidence.py` | Revision: figures of the Suricata replay, E6 V2, the responder audit and the security tests, recomputed from `experimental_results/reviewer_revision/new_experiments/` (standard library only) | none |
 | `python3 analysis/make_generated.py` | Tables VIII, XI, XIV, XV, XVI, Fig. 4 and the numbers quoted in the text (`generated/`, `figures/`) | 20260921 (session bootstrap) |
-| `python3 analysis/e5_agreement.py` | E5 rating agreement: weighted kappa with bootstrap interval, exact agreement, within-reviewer consistency | 20260923 |
+| `python3 analysis/e5_agreement.py` | E5 rating agreement: weighted kappa with bootstrap interval, exact agreement, within-rater consistency | 20260923 |
 | `python3 analysis/e6_supplementary_check.py` | Incident counts, model calls and drain times of the grouped E6 replay | none |
 
 The exact two-sided McNemar values of E8 follow from the discordant counts: 6 and 9 on the primary source (p = .607), 6 and 3 on the supplementary source (p = .508). Table IX and Fig. 2 need the E2 prediction export (about 149 MB), which is not public; `analysis/overlap_shingles.py` needs the three PDFs named in `experimental_results/overlap/README.md`.
@@ -78,7 +78,7 @@ Corresponding authors: Phan Van Tri (phanvantri@actvn.edu.vn) and Nguyen An Khuo
 
 ## Specification-runtime differential test (E8c, added in revision)
 
-`analysis/spec_runtime_differential.py` calls the archived runtime functions of the evaluated system (the E4 policy functions, the E3 routing scripts and the responder), enumerates each function's own finite input domain, and compares the outcome with the checked routing specification. Its output and report are in `experimental_results/e8c_spec_runtime/`. The archived runtime files are not part of this repository; the JSON records the SHA-256 of each file that was used, and the files are available from the corresponding authors. With them, the test is rerun by
+`analysis/spec_runtime_differential.py` calls the archived runtime functions of the evaluated system (the E4 policy functions, the E3 routing scripts and the responder), enumerates each function's own finite input domain, and compares the outcome with the checked routing specification. Its output and report are in `experimental_results/e8c_spec_runtime/`. The JSON records the SHA-256 of each of the eight runtime files that were used. Four of them are in this repository (`E4_SOAR_NO_ACTION.py`, `e4_experiment_runner.py`, `e1_ground_truth.csv` and `e1_session_manifest.csv`); the other four (`e3_elk_routing_adapter.py`, `e3_response_routing.py`, `e3_response_safety_boundary.py` and `e4_control_plane.py`) are not, and are available from the corresponding authors. With them, the test is rerun by
 
 ```
 python3 analysis/spec_runtime_differential.py --runtime-dir <dir with the archived files> --spec-dir analysis --out experimental_results/e8c_spec_runtime/spec_runtime_differential.json
