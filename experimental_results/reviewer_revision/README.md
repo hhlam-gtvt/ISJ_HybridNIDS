@@ -1,6 +1,6 @@
 # Evidence added for the revision (November 2026)
 
-Everything in this folder was produced after the reviews of the submitted manuscript. Nothing in the `isj-submission-v1.0` release was changed.
+Everything in this folder was produced after the reviews of the submitted manuscript. No data file of the `isj-submission-v1.0` release and no script other than `analysis/verify_reproduction.py` was changed.
 
 | Folder | Content | Level |
 |---|---|---|
